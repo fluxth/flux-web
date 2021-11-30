@@ -1,7 +1,7 @@
 const Footer = () => (
   <footer className="mt-4 mb-3 text-muted text-center">
     &copy; {new Date().getFullYear()}, Thitat Auareesuksakul.<br />
-    Inspired by webpages from early Internet era :)
+    Inspired by homepages from early WWW era :)
   </footer>
 )
 
