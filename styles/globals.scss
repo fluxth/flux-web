@@ -1,6 +1,8 @@
 @import "~bootstrap/scss/bootstrap-grid.scss";
 @import "~bootstrap/scss/bootstrap-utilities.scss";
 
+@import "~98.css/style.css";
+
 @font-face {
   font-family: "PX-CourBD16";
   src: url("../assets/fonts/COURBD-16-Bold.woff") format("woff");
@@ -46,8 +48,8 @@ div.main {
 }
 
 body {
-  font-family: PX-Times16, 'Times New Roman', serif;
-  font-size: 16px;
+  font-family: PX-Times16, 'Times New Roman', serif !important;
+  font-size: 16px !important;
 
   background: linear-gradient(
                 180deg,
@@ -56,39 +58,39 @@ body {
                 rgba(0,0,0,0) 0
               ), #f7f7f7;
   background-size: auto 4px;
-}
 
-h1 {
-  font-family: PX-TimesBd32, 'Times New Romain', serif;
-  font-size: 32px;
-}
+  h1 {
+    font-family: PX-TimesBd32, 'Times New Romain', serif;
+    font-size: 32px;
+  }
 
-h2 {
-  font-family: PX-TimesBd24, 'Times New Romain', serif;
-  font-size: 24px;
-}
+  h2 {
+    font-family: PX-TimesBd24, 'Times New Romain', serif;
+    font-size: 24px;
+  }
 
-b {
-  font-family: PX-TimesBd16, 'Times New Romain', serif;
-  font-size: 16px;
-}
+  b {
+    font-family: PX-TimesBd16, 'Times New Romain', serif;
+    font-size: 16px;
+  }
 
-i {
-  font-family: PX-TimesI16, 'Times New Romain', serif;
-  font-size: 16px;
-}
+  i {
+    font-family: PX-TimesI16, 'Times New Romain', serif;
+    font-size: 16px;
+  }
 
-table {
-  border-top: 1px solid #c0c0c0;
-  border-left: 1px solid #c0c0c0;
-  border-bottom: 1px solid #808080;
-  border-right: 1px solid #808080
-}
+  table {
+    border-top: 1px solid #c0c0c0;
+    border-left: 1px solid #c0c0c0;
+    border-bottom: 1px solid #808080;
+    border-right: 1px solid #808080
+  }
 
-th,td {
-  padding: 5px;
-  border-top: 1px solid #808080;
-  border-left: 1px solid #808080;
-  border-bottom: 1px solid #c0c0c0;
+  th,td {
+    padding: 5px;
+    border-top: 1px solid #808080;
+    border-left: 1px solid #808080;
+    border-bottom: 1px solid #c0c0c0;
+  }
   border-right: 1px solid #c0c0c0
 }
