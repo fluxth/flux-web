@@ -11,7 +11,7 @@ import styles from '../styles/NavMenu.module.scss'
 
 type MenuItem = {
   name: string
-  image?: StaticImageData,
+  image?: StaticImageData | string,
   url?: string,
 }
 
@@ -46,10 +46,10 @@ const MENU_ITEMS: MenuItem[] = [
 const NavMenu = () => (
   <div className={styles.navMenu}>
     {MENU_ITEMS.map(i => (
-      <div className={styles.navMenuItem}>
+      <div className={styles.navMenuItem} key={i.name + i.url}>
         {i.image ? (
           <div className={styles.navMenuItemImage}>
-            <Image src={i.image} alt={i.name} height={32} width={32} />
+            <Image src={i.image} alt={i.name} height={32} width={32} unoptimized={true} />
           </div>
         ) : null}
         <b>

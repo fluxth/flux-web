@@ -19,10 +19,10 @@ const Contact: NextPage = () => {
           <h2>Contact Info</h2>
           <p>
             Contact me via Email:{' '}
-            <a href={"mailto:" + config.email}>{config.email}</a>
+            <a target="_blank" rel="noreferrer" href={"mailto:" + config.email}>{config.email}</a>
             <br />
             My PGP public key is{' '}
-            <a target="_blank" href={config.pgp.url}>
+            <a target="_blank" rel="noreferrer" href={config.pgp.url}>
               {config.pgp.fingerprint}
             </a>
           </p>
