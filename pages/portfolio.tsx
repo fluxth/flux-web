@@ -12,11 +12,9 @@ const Portfolio: NextPage = () => {
         <meta name="description" content="flux.ci personal website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="main">
-        <Header />
-        <UnderConstruction />
-        <Footer />
-      </div>
+      <Header />
+      <UnderConstruction />
+      <Footer />
     </>
   )
 }

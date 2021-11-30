@@ -28,37 +28,35 @@ const Home: NextPage = () => {
         <meta name="description" content="flux.ci personal website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="main">
-        <Header />
-        <h2 className="mb-0">Welcome!</h2>
-        <p>
-          <Link href="/">flux.ci</Link> is a personal website owned by{' '}
-          <b>Thitat Auareesuksakul</b>, a software engineer and audio enthusiast.
-        </p>
-        <p>
-          This nostalgic <b>Web 2.0</b> experience, despite its looks, is powered by the
-          futuristic <a target="_blank" rel="noreferrer" href="https://nextjs.org/"><i>NextJS</i></a> framework.
-          <br />
-          <u>Fun Fact:</u> The navigation table above isn&apos;t a table, but flexbox divs!
-          Use <a target="_blank" rel="noreferrer" href="https://getfirebug.com">Firebug</a> to see them in action!
-        </p>
-        <p>
-          This site is 100% open-source and available
-          at <a target="_blank" rel="noreferrer" href={config.repo.url}>this GitHub repo</a>.
-        </p>
-        <p>
-          <b>Quick Links</b>
-          <ul className="mt-0">
-            {config.quick_links.map(i => (
-              <li key={i.href}><a target="_blank" rel="noreferrer" href={i.href}>{i.name}</a></li>
-            ))}
-          </ul>
-        </p>
-        <p className={styles.badges + " mt-4"}>
-          { BADGES.map(n => <img src={'/images/badges/' + n} alt="Badge" key={n} />) }
-        </p>
-        <Footer />
-      </div>
+      <Header />
+      <h2 className="mb-0">Welcome!</h2>
+      <p>
+        <Link href="/">flux.ci</Link> is a personal website owned by{' '}
+        <b>Thitat Auareesuksakul</b>, a software engineer and audio enthusiast.
+      </p>
+      <p>
+        This nostalgic <b>Web 2.0</b> experience, despite its looks, is powered by the
+        futuristic <a target="_blank" rel="noreferrer" href="https://nextjs.org/"><i>NextJS</i></a> framework.
+        <br />
+        <u>Fun Fact:</u> The navigation table above isn&apos;t a table, but flexbox divs!
+        Use <a target="_blank" rel="noreferrer" href="https://getfirebug.com">Firebug</a> to see them in action!
+      </p>
+      <p>
+        This site is 100% open-source and available
+        at <a target="_blank" rel="noreferrer" href={config.repo.url}>this GitHub repo</a>.
+      </p>
+      <p>
+        <b>Quick Links</b>
+        <ul className="mt-0">
+          {config.quick_links.map(i => (
+            <li key={i.href}><a target="_blank" rel="noreferrer" href={i.href}>{i.name}</a></li>
+          ))}
+        </ul>
+      </p>
+      <p className={styles.badges + " mt-4"}>
+        {BADGES.map(n => <img src={'/images/badges/' + n} alt="Badge" key={n} />)}
+      </p>
+      <Footer />
     </>
   )
 }

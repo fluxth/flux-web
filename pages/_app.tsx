@@ -8,7 +8,13 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta property="og:image" content="/images/cover_og.png" />
       </Head>
-      <Component {...pageProps} />
+      <div className="container-fluid">
+        <div className="row">
+          <div className="main col">
+            <Component {...pageProps} />
+          </div>
+        </div>
+      </div>
     </>
   )
 }

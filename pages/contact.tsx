@@ -17,25 +17,23 @@ const Contact: NextPage = () => {
         <meta name="description" content="flux.ci personal website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="main">
-        <Header />
-        <div className="text-center">
-          <h2>Contact Info</h2>
-          <a target="_blank" rel="noreferrer" href={"mailto:" + config.email}>
-            <Image src={SendEmailImage} alt="Send Email" unoptimized={true} />
+      <Header />
+      <div className="text-center">
+        <h2>Contact Info</h2>
+        <a target="_blank" rel="noreferrer" href={"mailto:" + config.email}>
+          <Image src={SendEmailImage} alt="Send Email" unoptimized={true} />
+        </a>
+        <p>
+          Contact me via E-mail:{' '}
+          <a target="_blank" rel="noreferrer" href={"mailto:" + config.email}>{config.email}</a>
+          <br />
+          My PGP public key is{' '}
+          <a target="_blank" rel="noreferrer" href={config.pgp.url}>
+            {config.pgp.fingerprint}
           </a>
-          <p>
-            Contact me via E-mail:{' '}
-            <a target="_blank" rel="noreferrer" href={"mailto:" + config.email}>{config.email}</a>
-            <br />
-            My PGP public key is{' '}
-            <a target="_blank" rel="noreferrer" href={config.pgp.url}>
-              {config.pgp.fingerprint}
-            </a>
-          </p>
-        </div>
-        <Footer />
+        </p>
       </div>
+      <Footer />
     </>
   )
 }
