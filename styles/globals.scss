@@ -48,6 +48,14 @@ div.main {
 body {
   font-family: PX-Times16, 'Times New Roman', serif;
   font-size: 16px;
+
+  background: linear-gradient(
+                180deg,
+                rgba(255,255,255,0.3) 50%,
+                rgba(0,0,0,0) 50%,
+                rgba(0,0,0,0) 0
+              ), #f7f7f7;
+  background-size: auto 4px;
 }
 
 h1 {
@@ -71,16 +79,16 @@ i {
 }
 
 table {
-	border-top: 1px solid #c0c0c0;
-	border-left: 1px solid #c0c0c0;
-	border-bottom: 1px solid #808080;
-	border-right: 1px solid #808080
+  border-top: 1px solid #c0c0c0;
+  border-left: 1px solid #c0c0c0;
+  border-bottom: 1px solid #808080;
+  border-right: 1px solid #808080
 }
 
 th,td {
-	padding: 5px;
-	border-top: 1px solid #808080;
-	border-left: 1px solid #808080;
-	border-bottom: 1px solid #c0c0c0;
-	border-right: 1px solid #c0c0c0
+  padding: 5px;
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-bottom: 1px solid #c0c0c0;
+  border-right: 1px solid #c0c0c0
 }
