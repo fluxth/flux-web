@@ -1,51 +1,18 @@
 import Image from 'next/image'
 import Link from 'next/link'
-
-import GlobeImage from '../assets/images/globe.gif'
-import InfoImage from '../assets/images/info.png'
-import PhoneBookImage from '../assets/images/phone_book.gif'
-import FolderFontsImage from '../assets/images/folder_fonts.png'
-import FileQuestionImage from '../assets/images/file_question.png'
+import config from '../config'
 
 import styles from '../styles/NavMenu.module.scss'
 
-type MenuItem = {
+export type MenuItem = {
   name: string
   image?: StaticImageData | string,
   url?: string,
 }
 
-const MENU_ITEMS: MenuItem[] = [
-  {
-    name: 'Home Page',
-    image: GlobeImage,
-    url: '/',
-  },
-  {
-    name: 'Blog',
-    image: FolderFontsImage,
-    url: '/blog',
-  },
-  {
-    name: 'Portfolio',
-    image: PhoneBookImage,
-    url: '/portfolio',
-  },
-  {
-    name: 'Resume',
-    image: FileQuestionImage,
-    url: '/resume',
-  },
-  {
-    name: 'Contact Info',
-    image: InfoImage,
-    url: '/contact',
-  },
-]
-
 const NavMenu = () => (
   <div className={styles.navMenu}>
-    {MENU_ITEMS.map(i => (
+    {config.navmenu_items.map(i => (
       <div className={styles.navMenuItem} key={i.name + i.url}>
         {i.image ? (
           <div className={styles.navMenuItemImage}>
