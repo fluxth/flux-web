@@ -39,7 +39,8 @@ const Home: NextPage = () => {
           This nostalgic <b>Web 2.0</b> experience, despite its looks, is powered by the
           futuristic <a target="_blank" rel="noreferrer" href="https://nextjs.org/"><i>NextJS</i></a> framework.
           <br />
-          <u>Fun Fact:</u> The navigation table above isn&apos;t a table, but flexbox divs! Use <a href="#">Firebug</a> to see them in action!
+          <u>Fun Fact:</u> The navigation table above isn&apos;t a table, but flexbox divs!
+          Use <a target="_blank" rel="noreferrer" href="https://getfirebug.com">Firebug</a> to see them in action!
         </p>
         <p>
           This site is 100% open-source and available
