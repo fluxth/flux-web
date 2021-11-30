@@ -1,0 +1,31 @@
+.navMenu {
+  margin: 0 auto;
+  padding: 0 1px;
+  background-color: #dff;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+
+  border-top: 1px solid #c0c0c0;
+  border-left: 1px solid #c0c0c0;
+  border-bottom: 1px solid #808080;
+  border-right: 1px solid #808080;
+
+  .navMenuItem {
+    display: flex;
+    height: auto;
+    align-items: center;
+
+    margin: 2px 1px;
+    padding: 0.25rem 0.5rem;
+    border-top: 1px solid #808080;
+    border-left: 1px solid #808080;
+    border-bottom: 1px solid #c0c0c0;
+    border-right: 1px solid #c0c0c0;
+
+    > .navMenuItemImage {
+      display: flex;
+      margin-right: 0.5rem;
+    }
+  }
+}
