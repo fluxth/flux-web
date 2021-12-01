@@ -1,12 +1,16 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 
 import ExtLink from '../components/ExtLink'
 
 import { REPO, HOME_LINKS, HOME_SERVICES } from '../config'
 
 import styles from '../styles/Home.module.scss'
+
+import GuestBookImage from '../assets/images/pleasesignguestbook.gif'
+import ChickenImage from '../assets/images/chicken-ani.gif'
 
 const BADGES = [
   'noteoth2.gif',
@@ -65,6 +69,15 @@ const Home: NextPage = () => {
       </div>
       <p className={styles.badges + " mt-4"}>
         {BADGES.map(n => <img src={'/images/badges/' + n} alt="Badge" key={n} />)}
+      </p>
+      <p className="text-center">
+        <Image src={ChickenImage} alt="Chicken (tm)" unoptimized={true} />
+        <br />
+        <Link href="/guestbook">
+          <a>
+            <Image src={GuestBookImage} alt="Sign the Guestbook!" unoptimized={true} />
+          </a>
+        </Link>
       </p>
     </>
   )
