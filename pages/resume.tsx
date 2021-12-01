@@ -36,7 +36,7 @@ const Resume: NextPage<Props> = ({ items }) => {
 
   const buttonClick = (item: Resume) => {
     setState({ selectedItem: item })
-    trackEvent({ action: 'viewResume', params: item })
+    trackEvent({ action: 'resume_view', params: item })
   }
 
   return (
@@ -65,7 +65,7 @@ const Resume: NextPage<Props> = ({ items }) => {
             [<ExtLink
               href={state.selectedItem.url}
               onClick={() => trackEvent({
-                action: 'downloadResume',
+                action: 'resume_download',
                 params: state.selectedItem ? state.selectedItem : null
               })}
             >

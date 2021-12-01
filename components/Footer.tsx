@@ -36,12 +36,12 @@ class Footer extends Component<Props, State> {
       bodyClassList.remove('dark-theme')
       bodyClassList.add('light-theme')
       this.setState({ darkThemeEnabled: false })
-      trackEvent({ action: 'changeTheme', params: { themeName: 'light' } })
+      trackEvent({ action: 'theme-change', params: { themeName: 'light' } })
     } else {
       bodyClassList.remove('light-theme')
       bodyClassList.add('dark-theme')
       this.setState({ darkThemeEnabled: true })
-      trackEvent({ action: 'changeTheme', params: { themeName: 'dark' } })
+      trackEvent({ action: 'theme-change', params: { themeName: 'dark' } })
     }
   }
 
