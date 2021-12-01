@@ -59,20 +59,22 @@ const Resume: NextPage<Props> = ({ items }) => {
             </button>
           ))}
         </p>
-        {state.selectedItem ? (
-          <div className={styles.preview}>
-            <iframe src={state.selectedItem.url} />
-            [<ExtLink
-              href={state.selectedItem.url}
-              onClick={() => trackEvent({
-                action: 'resume_download',
-                params: state.selectedItem ? state.selectedItem : null
-              })}
-            >
-              Download PDF
-            </ExtLink>]
-          </div>
-        ) : null}
+        <div className="row">
+          {state.selectedItem ? (
+            <div className={styles.preview + " col-12 col-sm-11 col-md-10"}>
+              <iframe src={state.selectedItem.url + '#view=fitH'} />
+              [<ExtLink
+                href={state.selectedItem.url}
+                onClick={() => trackEvent({
+                  action: 'resume_download',
+                  params: state.selectedItem ? state.selectedItem : null
+                })}
+              >
+                Download PDF
+              </ExtLink>]
+            </div>
+          ) : null}
+        </div>
       </div>
     </>
   )
