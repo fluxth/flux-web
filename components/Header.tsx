@@ -4,7 +4,9 @@ import styles from '../styles/Header.module.scss'
 
 const Header = () => (
   <div className={styles.header}>
-    <h1 className="text-center">&gt; flux.ci &lt;</h1>
+    <div className={styles.headerTitle}>
+      <h1>( flux.ci )</h1>
+    </div>
     <NavMenu />
     <hr />
     <noscript>
