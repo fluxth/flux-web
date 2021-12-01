@@ -7,6 +7,11 @@ const Header = () => (
     <h1 className="text-center">&gt; flux.ci &lt;</h1>
     <NavMenu />
     <hr />
+    <noscript>
+      <p className="text-red text-center">
+        <b>Important Message:</b> This site requires JavaScript to function!
+      </p>
+    </noscript>
   </div>
 )
 
