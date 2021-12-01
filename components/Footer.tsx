@@ -8,6 +8,8 @@ type State = {
   darkThemeEnabled: boolean
 }
 
+const DARK_THEME_KEY = 'fluxci_JoinedTheDarkSide'
+
 class Footer extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
@@ -24,25 +26,40 @@ class Footer extends Component<Props, State> {
       return
     }
 
-    this.setState({ darkThemeEnabled: bodyClassList.contains('dark-theme') })
+    const bodyDarkTheme = bodyClassList.contains('dark-theme')
+
+    const savedDarkTheme = window.localStorage.getItem(DARK_THEME_KEY) === 'true'
+    if (bodyDarkTheme !== savedDarkTheme) {
+      this.setDarkTheme(savedDarkTheme, false)
+    }
+  }
+
+  setDarkTheme(enabled: boolean, track?: boolean) {
+    const bodyClassList = document.querySelector('body')?.classList
+    if (!bodyClassList) return
+
+    // Clear themes
+    bodyClassList.remove('light-theme')
+    bodyClassList.remove('dark-theme')
+
+    if (enabled) {
+      bodyClassList.add('dark-theme')
+      this.setState({ darkThemeEnabled: true })
+      window.localStorage.setItem(DARK_THEME_KEY, 'true')
+      if (track)
+        trackEvent({ action: 'theme-change', params: { themeName: 'dark' } })
+    } else {
+      bodyClassList.add('light-theme')
+      this.setState({ darkThemeEnabled: false })
+      window.localStorage.setItem(DARK_THEME_KEY, 'false')
+      if (track)
+        trackEvent({ action: 'theme-change', params: { themeName: 'light' } })
+    }
   }
 
   switchTheme(event: any) {
     event.preventDefault()
-    const bodyClassList = document.querySelector('body')?.classList
-    if (!bodyClassList) return
-
-    if (this.state.darkThemeEnabled) {
-      bodyClassList.remove('dark-theme')
-      bodyClassList.add('light-theme')
-      this.setState({ darkThemeEnabled: false })
-      trackEvent({ action: 'theme-change', params: { themeName: 'light' } })
-    } else {
-      bodyClassList.remove('light-theme')
-      bodyClassList.add('dark-theme')
-      this.setState({ darkThemeEnabled: true })
-      trackEvent({ action: 'theme-change', params: { themeName: 'dark' } })
-    }
+    this.setDarkTheme(!this.state.darkThemeEnabled, true)
   }
 
   render() {
