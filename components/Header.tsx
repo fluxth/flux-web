@@ -2,10 +2,14 @@ import NavMenu from "./NavMenu"
 
 import styles from '../styles/Header.module.scss'
 
-const Header = () => (
+type Props = {
+  title: string
+}
+
+const Header = ({ title }: Props) => (
   <div className={styles.header}>
     <div className={styles.headerTitle}>
-      <h1>( flux.ci )</h1>
+      <h1>{title}</h1>
     </div>
     <NavMenu />
     <hr />

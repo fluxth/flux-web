@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
@@ -6,9 +6,26 @@ import SendEmailImage from '../assets/images/sendemail.gif'
 
 import ExtLink from '../components/ExtLink'
 
-import { EMAIL, PGP } from '../config'
+import config from '../_data/config.json'
 
-const Contact: NextPage = () => {
+type Props = {
+  email: string
+  pgp: {
+    fingerprint: string
+    url: string
+  }
+}
+
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    props: {
+      email: config.email,
+      pgp: config.pgp
+    }
+  }
+}
+
+const Contact: NextPage<Props> = ({ email, pgp }) => {
   return (
     <>
       <Head>
@@ -16,16 +33,16 @@ const Contact: NextPage = () => {
       </Head>
       <div className="text-center">
         <h2>Contact Info</h2>
-        <ExtLink href={"mailto:" + EMAIL}>
+        <ExtLink href={"mailto:" + email}>
           <Image src={SendEmailImage} alt="Send Email" unoptimized={true} />
         </ExtLink>
         <p>
           Contact me via E-mail:{' '}
-          <ExtLink href={"mailto:" + EMAIL}>{EMAIL}</ExtLink>
+          <ExtLink href={"mailto:" + email}>{email}</ExtLink>
           <br />
           My PGP public key is{' '}
-          <ExtLink href={PGP.url}>
-            {PGP.fingerprint}
+          <ExtLink href={pgp.url}>
+            {pgp.fingerprint}
           </ExtLink>
         </p>
       </div>

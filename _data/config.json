@@ -1,0 +1,57 @@
+{
+    "email": "thitat@flux.ci",
+    "pgp": {
+        "fingerprint": "0x2A1409A6",
+        "url": "https://raw.githubusercontent.com/fluxth/fluxth/master/pgp/fluxth.pgp.asc"
+    },
+    "homepage": {
+        "links": {
+            "general": [
+                {
+                    "name": "LinkedIn Profile",
+                    "url": "https://www.linkedin.com/in/fluxth/"
+                },
+                {
+                    "name": "GitHub Profile",
+                    "url": "https://github.com/fluxth"
+                },
+                {
+                    "name": "PGP Public Key",
+                    "url": "https://raw.githubusercontent.com/fluxth/fluxth/master/pgp/fluxth.pgp.asc"
+                }
+            ],
+            "services": [
+                {
+                    "name": "fluxsearch",
+                    "url": "https://search.flux.ci"
+                },
+                {
+                    "name": "vouchergen",
+                    "url": "/vouchergen"
+                }
+            ]
+        },
+        "badges": [
+            "noteoth2.gif",
+            "now20_button.gif",
+            "apple.gif",
+            "800x600a.gif",
+            "captain-hawkes.neocities.org.gif",
+            "chill_pill.gif",
+            "ka88x31.gif",
+            "any88x31.gif"
+        ]
+    },
+    "resume": {
+        "items": [
+            {
+                "name": "Coding Resume",
+                "url": "/files/coding_resume.pdf"
+            },
+            {
+                "name": "Media Resume",
+                "url": "/files/media_resume.pdf"
+            }
+        ]
+    }
+}

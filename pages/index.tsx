@@ -1,29 +1,41 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 
 import ExtLink from '../components/ExtLink'
 
-import { REPO, HOME_LINKS, HOME_SERVICES } from '../config'
+import { REPO } from '../config'
+import config from '../_data/config.json'
 
 import styles from '../styles/Home.module.scss'
 
 import GuestBookImage from '../assets/images/pleasesignguestbook.gif'
 import ChickenImage from '../assets/images/chicken-ani.gif'
 
-const BADGES = [
-  'noteoth2.gif',
-  'now20_button.gif',
-  'apple.gif',
-  '800x600a.gif',
-  'captain-hawkes.neocities.org.gif',
-  'chill_pill.gif',
-  'ka88x31.gif',
-  'any88x31.gif',
-]
+type LinkItem = {
+  name: string
+  url: string
+}
 
-const Home: NextPage = () => {
+type Props = {
+  links: {
+    general: LinkItem[]
+    services: LinkItem[]
+  }
+  badges: string[]
+}
+
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    props: {
+      links: config.homepage.links,
+      badges: config.homepage.badges,
+    }
+  }
+}
+
+const Home: NextPage<Props> = ({ links, badges }) => {
   return (
     <>
       <Head>
@@ -49,7 +61,7 @@ const Home: NextPage = () => {
         <div className="col-12 col-sm-6">
           <b>Cool Links</b>
           <ul className="mt-0">
-            {HOME_LINKS.map(i => (
+            {links.general.map(i => (
               <li key={i.url}><ExtLink href={i.url}>{i.name}</ExtLink></li>
             ))}
           </ul>
@@ -57,14 +69,14 @@ const Home: NextPage = () => {
         <div className="col-12 col-sm-6">
           <b>Services</b>
           <ul className="mt-0">
-            {HOME_SERVICES.map(i => (
+            {links.services.map(i => (
               <li key={i.url}><ExtLink href={i.url}>{i.name}</ExtLink></li>
             ))}
           </ul>
         </div>
       </div>
       <p className={styles.badges + " mt-4"}>
-        {BADGES.map(n => <img src={'/images/badges/' + n} alt="Badge" key={n} />)}
+        {badges.map(n => <img src={'/images/badges/' + n} alt="Badge" key={n} />)}
       </p>
       <p className="text-center">
         <Image src={ChickenImage} alt="Chicken (tm)" unoptimized={true} />

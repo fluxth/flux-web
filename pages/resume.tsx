@@ -1,39 +1,39 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
 
 import ExtLink from '../components/ExtLink'
 
+import config from '../_data/config.json'
+
 import styles from '../styles/Resume.module.scss'
 
 type Resume = {
   name: string
-  src: string
+  url: string
+}
+
+type Props = {
+  items: Resume[]
 }
 
 type State = {
-  items: Resume[]
   selectedItem?: Resume
 }
 
-const RESUMES = [
-  {
-    name: 'Coding Resume',
-    src: '/files/coding_resume.pdf'
-  },
-  {
-    name: 'Media Resume',
-    src: '/files/media_resume.pdf'
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    props: {
+      items: config.resume.items
+    }
   }
-]
+}
 
-const Resume: NextPage = () => {
-  const [state, setState] = useState<State>({
-    items: RESUMES
-  })
+const Resume: NextPage<Props> = ({ items }) => {
+  const [state, setState] = useState<State>({})
 
   const buttonClick = (item: Resume) => {
-    setState({ ...state, selectedItem: item })
+    setState({ selectedItem: item })
   }
 
   return (
@@ -45,10 +45,10 @@ const Resume: NextPage = () => {
         <h2>View Resume</h2>
         <b>Select your flavor:</b>
         <p className="mt-2">
-          {state.items.map(item => (
+          {items.map(item => (
             <button
               className={styles.button}
-              key={item.src}
+              key={item.url}
               disabled={state.selectedItem === item}
               onClick={() => buttonClick(item)}
             >
@@ -58,8 +58,8 @@ const Resume: NextPage = () => {
         </p>
         {state.selectedItem ? (
           <div className={styles.preview}>
-            <iframe src={state.selectedItem.src} />
-            [<ExtLink href={state.selectedItem.src}>Download PDF</ExtLink>]
+            <iframe src={state.selectedItem.url} />
+            [<ExtLink href={state.selectedItem.url}>Download PDF</ExtLink>]
           </div>
         ) : null}
       </div>

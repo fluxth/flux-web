@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div className="container-fluid">
         <div className="row">
           <div className="main col">
-            <Header {...pageProps} />
+            <Header title="( flux.ci )" {...pageProps} />
             <Component {...pageProps} />
             <Footer {...pageProps} />
           </div>
