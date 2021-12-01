@@ -1,4 +1,10 @@
+@import "~bootstrap/scss/bootstrap-utilities.scss";
+
 .badges {
+  @include media-breakpoint-down(md) {
+    text-align: center;
+  }
+
   img {
     margin-right: 2px;
   }
