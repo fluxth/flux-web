@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import config from '../config'
+import { NAVMENU_ITEMS } from '../config'
 
 import styles from '../styles/NavMenu.module.scss'
 
@@ -14,7 +14,7 @@ const NavMenu = () => (
   <>
     <div>
       <div className={"row " + styles.navMenu}>
-        {config.navmenu_items.map(i => (
+        {NAVMENU_ITEMS.map(i => (
           <div className={"col-12 col-md-auto " + styles.navMenuItem} key={i.name + i.url}>
             {i.image ? (
               <div className={styles.navMenuItemImage}>
