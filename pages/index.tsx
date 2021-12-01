@@ -29,12 +29,6 @@ const Home: NextPage = () => {
         <b>Thitat Auareesuksakul</b>, a software engineer and audio enthusiast.
       </p>
       <p>
-        <b>Who am I?</b>
-      </p>
-      <p>
-        <b>What I do?</b>
-      </p>
-      <p>
         This nostalgic <b>Web 2.0</b> experience, despite its looks, is powered by the
         futuristic <a target="_blank" rel="noreferrer" href="https://nextjs.org/"><i>NextJS</i></a> framework.
         <br />
