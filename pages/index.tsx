@@ -47,24 +47,20 @@ const Home: NextPage = () => {
       </p>
       <div className="row">
         <div className="col-12 col-sm-6">
-          <p>
-            <b>Cool Links</b>
-            <ul className="mt-0">
-              {HOME_LINKS.map(i => (
-                <li key={i.url}><ExtLink href={i.url}>{i.name}</ExtLink></li>
-              ))}
-            </ul>
-          </p>
+          <b>Cool Links</b>
+          <ul className="mt-0">
+            {HOME_LINKS.map(i => (
+              <li key={i.url}><ExtLink href={i.url}>{i.name}</ExtLink></li>
+            ))}
+          </ul>
         </div>
         <div className="col-12 col-sm-6">
-          <p>
-            <b>Services</b>
-            <ul className="mt-0">
-              {HOME_SERVICES.map(i => (
-                <li key={i.url}><ExtLink href={i.url}>{i.name}</ExtLink></li>
-              ))}
-            </ul>
-          </p>
+          <b>Services</b>
+          <ul className="mt-0">
+            {HOME_SERVICES.map(i => (
+              <li key={i.url}><ExtLink href={i.url}>{i.name}</ExtLink></li>
+            ))}
+          </ul>
         </div>
       </div>
       <p className={styles.badges + " mt-4"}>
