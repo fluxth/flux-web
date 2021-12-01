@@ -4,6 +4,8 @@ import Image from 'next/image'
 
 import SendEmailImage from '../assets/images/sendemail.gif'
 
+import ExtLink from '../components/ExtLink'
+
 import { EMAIL, PGP } from '../config'
 
 const Contact: NextPage = () => {
@@ -14,17 +16,17 @@ const Contact: NextPage = () => {
       </Head>
       <div className="text-center">
         <h2>Contact Info</h2>
-        <a target="_blank" rel="noreferrer" href={"mailto:" + EMAIL}>
+        <ExtLink href={"mailto:" + EMAIL}>
           <Image src={SendEmailImage} alt="Send Email" unoptimized={true} />
-        </a>
+        </ExtLink>
         <p>
           Contact me via E-mail:{' '}
-          <a target="_blank" rel="noreferrer" href={"mailto:" + EMAIL}>{EMAIL}</a>
+          <ExtLink href={"mailto:" + EMAIL}>{EMAIL}</ExtLink>
           <br />
           My PGP public key is{' '}
-          <a target="_blank" rel="noreferrer" href={PGP.url}>
+          <ExtLink href={PGP.url}>
             {PGP.fingerprint}
-          </a>
+          </ExtLink>
         </p>
       </div>
     </>

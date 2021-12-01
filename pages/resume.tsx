@@ -2,6 +2,8 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
 
+import ExtLink from '../components/ExtLink'
+
 import styles from '../styles/Resume.module.scss'
 
 type Resume = {
@@ -57,7 +59,7 @@ const Resume: NextPage = () => {
         {state.selectedItem ? (
           <div className={styles.preview}>
             <iframe src={state.selectedItem.src} />
-            [<a target="_blank" rel="noreferrer" href={state.selectedItem.src}>Download PDF</a>]
+            [<ExtLink href={state.selectedItem.src}>Download PDF</ExtLink>]
           </div>
         ) : null}
       </div>

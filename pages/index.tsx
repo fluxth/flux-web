@@ -2,6 +2,8 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
+import ExtLink from '../components/ExtLink'
+
 import { REPO, HOME_LINKS, HOME_SERVICES } from '../config'
 
 import styles from '../styles/Home.module.scss'
@@ -30,14 +32,14 @@ const Home: NextPage = () => {
       </p>
       <p>
         This nostalgic <b>Web 2.0</b> experience, despite its looks, is powered by the
-        futuristic <a target="_blank" rel="noreferrer" href="https://nextjs.org/"><i>NextJS</i></a> framework.
+        futuristic <ExtLink href="https://nextjs.org/"><i>NextJS</i></ExtLink> framework.
         <br />
         <u>Fun Fact:</u> The navigation table above isn&apos;t a table, but flexbox divs!
-        Use <a target="_blank" rel="noreferrer" href="https://getfirebug.com">Firebug</a> to see them in action!
+        Use <ExtLink href="https://getfirebug.com">Firebug</ExtLink> to see them in action!
       </p>
       <p>
         This site is 100% open-source and available
-        at <a target="_blank" rel="noreferrer" href={REPO.url}>this GitHub repo</a>.
+        at <ExtLink href={REPO.url}>this GitHub repo</ExtLink>.
       </p>
       <div className="row">
         <div className="col-12 col-sm-6">
@@ -45,7 +47,7 @@ const Home: NextPage = () => {
             <b>Cool Links</b>
             <ul className="mt-0">
               {HOME_LINKS.map(i => (
-                <li key={i.url}><a target="_blank" rel="noreferrer" href={i.url}>{i.name}</a></li>
+                <li key={i.url}><ExtLink href={i.url}>{i.name}</ExtLink></li>
               ))}
             </ul>
           </p>
@@ -55,7 +57,7 @@ const Home: NextPage = () => {
             <b>Services</b>
             <ul className="mt-0">
               {HOME_SERVICES.map(i => (
-                <li key={i.url}><a target="_blank" rel="noreferrer" href={i.url}>{i.name}</a></li>
+                <li key={i.url}><ExtLink href={i.url}>{i.name}</ExtLink></li>
               ))}
             </ul>
           </p>
