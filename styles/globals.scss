@@ -103,6 +103,11 @@ body {
     image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
     -ms-interpolation-mode: nearest-neighbor; 
   }
+
+  u {
+    border: none;
+    text-decoration: underline;
+  }
 }
 
 .text-red {
