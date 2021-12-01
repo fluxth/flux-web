@@ -2,9 +2,6 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-
 import SendEmailImage from '../assets/images/sendemail.gif'
 
 import config from '../config'
@@ -14,10 +11,7 @@ const Contact: NextPage = () => {
     <>
       <Head>
         <title>Contact Info - flux.ci</title>
-        <meta name="description" content="flux.ci personal website" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       <div className="text-center">
         <h2>Contact Info</h2>
         <a target="_blank" rel="noreferrer" href={"mailto:" + config.email}>
@@ -33,7 +27,6 @@ const Contact: NextPage = () => {
           </a>
         </p>
       </div>
-      <Footer />
     </>
   )
 }

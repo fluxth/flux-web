@@ -2,9 +2,6 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-
 import config from '../config'
 
 import styles from '../styles/Home.module.scss'
@@ -25,10 +22,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Home - flux.ci</title>
-        <meta name="description" content="flux.ci personal website" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       <h2 className="mb-0">Welcome!</h2>
       <p>
         <Link href="/">flux.ci</Link> is a personal website owned by{' '}
@@ -45,18 +39,30 @@ const Home: NextPage = () => {
         This site is 100% open-source and available
         at <a target="_blank" rel="noreferrer" href={config.repo.url}>this GitHub repo</a>.
       </p>
-      <p>
-        <b>Quick Links</b>
-        <ul className="mt-0">
-          {config.quick_links.map(i => (
-            <li key={i.href}><a target="_blank" rel="noreferrer" href={i.href}>{i.name}</a></li>
-          ))}
-        </ul>
-      </p>
+      <div className="row">
+        <div className="col-12 col-sm-6">
+          <p>
+            <b>Cool Links</b>
+            <ul className="mt-0">
+              {config.quick_links.map(i => (
+                <li key={i.href}><a target="_blank" rel="noreferrer" href={i.href}>{i.name}</a></li>
+              ))}
+            </ul>
+          </p>
+        </div>
+        <div className="col-12 col-sm-6">
+          <p>
+            <b>Services</b>
+            <ul className="mt-0">
+              <li><a target="_blank" rel="noreferrer" href="https://search.flux.ci">fluxsearch</a></li>
+              <li><a target="_blank" rel="noreferrer" href="/vouchergen">vouchergen</a></li>
+            </ul>
+          </p>
+        </div>
+      </div>
       <p className={styles.badges + " mt-4"}>
         {BADGES.map(n => <img src={'/images/badges/' + n} alt="Badge" key={n} />)}
       </p>
-      <Footer />
     </>
   )
 }

@@ -2,9 +2,6 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
 
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-
 import styles from '../styles/Resume.module.scss'
 
 type Resume = {
@@ -41,10 +38,7 @@ const Resume: NextPage = () => {
     <>
       <Head>
         <title>Resume - flux.ci</title>
-        <meta name="description" content="flux.ci personal website" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       <div className="text-center">
         <h2>View Resume</h2>
         <b>Select your flavor:</b>
@@ -67,7 +61,6 @@ const Resume: NextPage = () => {
           </div>
         ) : null}
       </div>
-      <Footer />
     </>
   )
 }
