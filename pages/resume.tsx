@@ -4,6 +4,8 @@ import { useState } from 'react'
 
 import ExtLink from '../components/ExtLink'
 
+import { trackEvent } from '../lib/ga'
+
 import config from '../_data/config.json'
 
 import styles from '../styles/Resume.module.scss'
@@ -34,6 +36,7 @@ const Resume: NextPage<Props> = ({ items }) => {
 
   const buttonClick = (item: Resume) => {
     setState({ selectedItem: item })
+    trackEvent({ action: 'viewResume', params: item })
   }
 
   return (
@@ -59,7 +62,15 @@ const Resume: NextPage<Props> = ({ items }) => {
         {state.selectedItem ? (
           <div className={styles.preview}>
             <iframe src={state.selectedItem.url} />
-            [<ExtLink href={state.selectedItem.url}>Download PDF</ExtLink>]
+            [<ExtLink
+              href={state.selectedItem.url}
+              onClick={() => trackEvent({
+                action: 'downloadResume',
+                params: state.selectedItem ? state.selectedItem : null
+              })}
+            >
+              Download PDF
+            </ExtLink>]
           </div>
         ) : null}
       </div>

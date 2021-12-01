@@ -1,5 +1,7 @@
 import { Component } from 'react'
 
+import { trackEvent } from '../lib/ga'
+
 type Props = {}
 
 type State = {
@@ -34,10 +36,12 @@ class Footer extends Component<Props, State> {
       bodyClassList.remove('dark-theme')
       bodyClassList.add('light-theme')
       this.setState({ darkThemeEnabled: false })
+      trackEvent({ action: 'changeTheme', params: { themeName: 'light' } })
     } else {
       bodyClassList.remove('light-theme')
       bodyClassList.add('dark-theme')
       this.setState({ darkThemeEnabled: true })
+      trackEvent({ action: 'changeTheme', params: { themeName: 'dark' } })
     }
   }
 
@@ -48,7 +52,7 @@ class Footer extends Component<Props, State> {
         Inspired by homepages from early WWW era :)
         <div className="mt-2">
           [<a href="#switch-theme" onClick={this.switchTheme.bind(this)}>
-            Switch to { this.state.darkThemeEnabled ? 'Light Mode' : 'the Dark Side' }
+            Switch to {this.state.darkThemeEnabled ? 'Light Mode' : 'the Dark Side'}
           </a>]
         </div>
       </footer>

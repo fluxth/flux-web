@@ -1,27 +1,46 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import Script from 'next/script'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
+import * as ga from '../lib/ga'
+
 import '../styles/globals.scss'
 
-const GA_ID = 'G-0KXE0067PX'
-
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      ga.pageView(url)
+    }
+    // When the component is mounted, subscribe to router changes
+    // and log those page views
+    router.events.on('routeChangeComplete', handleRouteChange)
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+
   return (
     <>
       <Script
         strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${ga.GA_ID}`}
       />
       <Script strategy="lazyOnload" id="ga">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_ID}', {
+          gtag('config', '${ga.GA_ID}', {
             page_path: window.location.pathname,
           });
         `}
