@@ -1,5 +1,7 @@
 @import "~bootstrap/scss/bootstrap-utilities.scss";
 
+@import './helpers.scss';
+
 .navMenu {
   margin: 0 auto !important;
   padding: 0 1px;
@@ -33,10 +35,11 @@
     border-bottom: 1px solid #c0c0c0;
     border-right: 1px solid #c0c0c0;
 
-
     > .navMenuItemImage {
       display: flex;
       margin-right: 0.5rem;
     }
+
+    @include light-theme-links;
   }
 }

@@ -3,6 +3,8 @@
 
 @import "~98.css/style.css";
 
+@import './helpers.scss';
+
 @font-face {
   font-family: "PX-CourBD16";
   src: url("../assets/fonts/COURBD-16-Bold.woff") format("woff");
@@ -50,14 +52,6 @@ div.main {
 body {
   font-family: PX-Times16, 'Times New Roman', serif !important;
   font-size: 16px !important;
-
-  background: linear-gradient(
-                180deg,
-                rgba(255,255,255,0.3) 50%,
-                rgba(0,0,0,0) 50%,
-                rgba(0,0,0,0) 0
-              ), #f7f7f7;
-  background-size: auto 4px;
 
   h1 {
     font-family: PX-TimesBd32, 'Times New Romain', serif;
@@ -107,6 +101,28 @@ body {
   u {
     border: none;
     text-decoration: underline;
+  }
+}
+
+body {
+  &.light-theme {
+    background: linear-gradient(
+                  180deg,
+                  rgba(255,255,255,0.3) 50%,
+                  rgba(0,0,0,0) 50%,
+                  rgba(0,0,0,0) 0
+                ), #f7f7f7;
+    background-size: auto 4px;
+
+    @include light-theme-links;
+  }
+
+  &.dark-theme {
+    background-color: black;
+    background: url('../assets/images/stars-background.gif');
+    color: #ddd;
+
+    @include dark-theme-links;
   }
 }
 

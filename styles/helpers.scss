@@ -1,0 +1,27 @@
+@mixin light-theme-links {
+  a {
+    color: blue;
+
+    &:active {
+      color: red;
+    }
+
+    &:visited {
+      color: #551A8B;
+    }
+  }
+}
+
+@mixin dark-theme-links {
+  a {
+    color: yellow;
+
+    &:active {
+      color: red;
+    }
+
+    &:visited {
+      color: orange;
+    }
+  }
+}
