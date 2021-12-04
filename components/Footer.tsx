@@ -1,6 +1,10 @@
 import { Component } from 'react'
+import Image from 'next/image'
 
 import { trackEvent } from '../lib/ga'
+import styles from '../styles/Footer.module.scss'
+
+import DarkSideImage from '../assets/images/darkside.gif'
 
 type Props = {}
 
@@ -64,13 +68,20 @@ class Footer extends Component<Props, State> {
 
   render() {
     return (
-      <footer className="my-4 text-muted text-center">
+      <footer className={styles.footer + " my-4 text-muted text-center"}>
         &copy; {new Date().getFullYear()}, Thitat Auareesuksakul.<br />
         Inspired by homepages from early WWW era :)
-        <div className="mt-2">
-          [<a href="#switch-theme" onClick={this.switchTheme.bind(this)}>
+        <div className={styles.darkSideToggle + " mt-2"}>
+          [<a
+            href="#switch-theme"
+            data-switch-to={this.state.darkThemeEnabled ? 'light-theme' : 'dark-theme'}
+            onClick={this.switchTheme.bind(this)}
+          >
             Switch to {this.state.darkThemeEnabled ? 'Light Mode' : 'the Dark Side'}
           </a>]
+          <div className={styles.darkSidePopover}>
+            <Image src={DarkSideImage} unoptimized={true} />
+          </div>
         </div>
       </footer>
     )

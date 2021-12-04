@@ -1,0 +1,24 @@
+.footer {
+  .darkSideToggle {
+    position: relative;
+
+    .darkSidePopover {
+      display: none;
+      position: absolute;
+      top: -90px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    > a[href="#switch-theme"][data-switch-to="dark-theme"] {
+      &:hover {
+        color: black;
+        text-decoration: none;
+
+        + .darkSidePopover {
+          display: block;
+        }
+      }
+    }
+  }
+}
