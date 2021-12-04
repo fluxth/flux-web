@@ -18,12 +18,19 @@ type LinkItem = {
   url: string
 }
 
+type BadgeItem = {
+  src: string
+  alt?: string
+  url?: string
+  title?: string
+}
+
 type Props = {
   links: {
     general: LinkItem[]
     services: LinkItem[]
   }
-  badges: string[]
+  badges: (string | BadgeItem)[]
 }
 
 export const getStaticProps: GetStaticProps = () => {
@@ -76,7 +83,24 @@ const Home: NextPage<Props> = ({ links, badges }) => {
         </div>
       </div>
       <p className={styles.badges + " mt-4"}>
-        {badges.map(n => <img src={'/images/badges/' + n} alt="Badge" key={n} />)}
+        {badges.map(item => {
+          const prefix = '/images/badges/'
+          if (typeof item === 'string')
+            return <img src={prefix + item} alt="Badge" key={item} />
+
+          const image = (
+            <img
+              src={prefix + item.src}
+              title={item.title}
+              alt={item.alt ? item.alt : "Badge"}
+              key={item.src}
+            />
+          )
+
+          return !item.url ? image : (
+            <ExtLink href={item.url}>{image}</ExtLink>
+          )
+        })}
       </p>
       <p className="text-center">
         <Image src={ChickenImage} alt="Chicken (tm)" unoptimized={true} />
