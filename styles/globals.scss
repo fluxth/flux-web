@@ -119,7 +119,7 @@ body {
 
   &.dark-theme {
     background-color: black;
-    background: url('../assets/images/stars-background.gif');
+    background: url('../assets/images/stars-background.gif'), black;
     color: #ddd;
 
     @include dark-theme-links;
