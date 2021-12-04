@@ -10,6 +10,7 @@ import config from '../_data/config.json'
 
 import styles from '../styles/Home.module.scss'
 
+import WelcomeImage from '../assets/images/welcome.gif'
 import GuestBookImage from '../assets/images/pleasesignguestbook.gif'
 import ChickenImage from '../assets/images/chicken-ani.gif'
 
@@ -48,7 +49,7 @@ const Home: NextPage<Props> = ({ links, badges }) => {
       <Head>
         <title>Home - flux.ci</title>
       </Head>
-      <h2 className="mb-0">Welcome!</h2>
+      <Image src={WelcomeImage} unoptimized={true} />
       <p>
         <Link href="/">flux.ci</Link> is a personal website owned by{' '}
         <b>Thitat Auareesuksakul</b>, a software engineer and audio enthusiast.
