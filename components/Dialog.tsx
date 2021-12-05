@@ -36,7 +36,11 @@ const Dialog = (props: Props) => {
   return (
     <>
       <div className={styles.veil} onClick={veilClick}></div>
-      <Draggable handle=".title-bar" positionOffset={{ x: '-50%', y: '-50%' }} disabled={width < 576}>
+      <Draggable
+        handle=".title-bar"
+        positionOffset={{ x: '-50%', y: '-50%' }}
+        disabled={width < 576} // FIXME: Reset dialog to center
+      >
         <div className={styles.dialog}>
           <div className="window">
             <div className={"title-bar" + (state.isInactive ? ' inactive' : '')}>
