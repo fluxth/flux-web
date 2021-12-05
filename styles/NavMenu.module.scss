@@ -2,6 +2,10 @@
 
 @import './helpers.scss';
 
+:global body.dark-theme :local .navMenu {
+  background-color: #ababab;
+}
+
 .navMenu {
   margin: 0 auto !important;
   padding: 0 1px;
