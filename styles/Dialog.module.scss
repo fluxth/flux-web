@@ -9,6 +9,8 @@
   color: #000;
 
   :global .window {
+    text-align: left;
+
     :global .title-bar,
     :global .window-body {
       cursor: default;
