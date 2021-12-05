@@ -8,8 +8,18 @@
   max-height: 100vh;
   color: #000;
 
-  pre {
-    overflow: auto;
+  :global .window {
+    :global .title-bar,
+    :global .window-body {
+      cursor: default;
+      user-select: none;
+    }
+
+    pre {
+      overflow: auto;
+      cursor: auto;
+      user-select: text;
+    }
   }
 
   @include media-breakpoint-down(sm) {
