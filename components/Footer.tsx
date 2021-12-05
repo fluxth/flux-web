@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import { Component, MouseEvent } from 'react'
 import Image from 'next/image'
 
 import { trackEvent } from '../lib/ga'
@@ -61,7 +61,7 @@ class Footer extends Component<Props, State> {
     }
   }
 
-  switchTheme(event: any) {
+  switchTheme(event: MouseEvent<HTMLAnchorElement>) {
     event.preventDefault()
     this.setDarkTheme(!this.state.darkThemeEnabled, true)
   }
