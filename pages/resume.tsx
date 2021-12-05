@@ -48,10 +48,11 @@ const Resume: NextPage<Props> = ({ items }) => {
         <h2>View Resume</h2>
         <b>Select your flavor:</b>
         <p className="mt-2">
-          {items.map(item => (
+          {items.map((item, k) => (
             <button
               className={styles.button}
               key={item.url}
+              autoFocus={k === 0}
               disabled={state.selectedItem === item}
               onClick={() => buttonClick(item)}
             >
