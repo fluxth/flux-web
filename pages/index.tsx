@@ -3,7 +3,9 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 
+import PGPDialog, { type PGPData } from '../components/PGPDialog'
 import ExtLink from '../components/ExtLink'
+import { escapeHtml } from '../lib/utils'
 
 import { REPO } from '../config'
 import config from '../_data/config.json'
@@ -32,18 +34,25 @@ type Props = {
     services: LinkItem[]
   }
   badges: (string | BadgeItem)[]
+  pgp: PGPData
 }
 
-export const getStaticProps: GetStaticProps = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const pgpFetch = await fetch(config.pgp.url)
+  if (!pgpFetch.ok) throw 'PGP Fetch Failed'
+
+  const pgpContent = escapeHtml(await pgpFetch.text())
+
   return {
     props: {
       links: config.homepage.links,
       badges: config.homepage.badges,
+      pgp: { ...config.pgp, content: pgpContent }
     }
   }
 }
 
-const Home: NextPage<Props> = ({ links, badges }) => {
+const Home: NextPage<Props> = ({ links, badges, pgp }) => {
   return (
     <>
       <Head>
@@ -72,6 +81,13 @@ const Home: NextPage<Props> = ({ links, badges }) => {
             {links.general.map(i => (
               <li key={i.url}><ExtLink href={i.url}>{i.name}</ExtLink></li>
             ))}
+            <li>
+              <PGPDialog pgp={pgp}>
+                <a href="#pgp" onClick={(e) => e.preventDefault()}>
+                  View PGP Public Key
+                </a>
+              </PGPDialog>
+            </li>
           </ul>
         </div>
         <div className="col-12 col-sm-6">

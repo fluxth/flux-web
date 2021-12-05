@@ -14,10 +14,6 @@
         {
           "name": "GitHub Profile",
           "url": "https://github.com/fluxth"
-        },
-        {
-          "name": "PGP Public Key",
-          "url": "https://raw.githubusercontent.com/fluxth/fluxth/master/pgp/fluxth.pgp.asc"
         }
       ],
       "services": [
