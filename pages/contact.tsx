@@ -1,29 +1,19 @@
 import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState, MouseEvent } from 'react'
 
 import SendEmailImage from '../assets/images/sendemail.gif'
 
 import ExtLink from '../components/ExtLink'
-import Dialog from '../components/Dialog'
+import PGPDialog, { type PGPData } from '../components/PGPDialog'
 
-import { trackEvent } from '../lib/ga'
 import { escapeHtml } from '../lib/utils'
 
 import config from '../_data/config.json'
 
 type Props = {
   email: string
-  pgp: {
-    fingerprint: string
-    url: string
-  }
-  pgpContent: string
-}
-
-type State = {
-  pgpDialogShown: boolean
+  pgp: PGPData
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -35,23 +25,12 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       email: config.email,
-      pgp: config.pgp,
-      pgpContent
+      pgp: { ...config.pgp, content: pgpContent },
     }
   }
 }
 
-const Contact: NextPage<Props> = ({ email, pgp, pgpContent }) => {
-  const [state, setState] = useState<State>({
-    pgpDialogShown: false
-  })
-
-  const pgpClick = (event: MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault()
-    setState({ pgpDialogShown: true })
-    trackEvent({ action: 'pgp_click' })
-  }
-
+const Contact: NextPage<Props> = ({ email, pgp }) => {
   return (
     <>
       <Head>
@@ -67,29 +46,13 @@ const Contact: NextPage<Props> = ({ email, pgp, pgpContent }) => {
           <ExtLink href={"mailto:" + email}>{email}</ExtLink>
           <br />
           My PGP public key is{' '}
-          <a href="#pgp" onClick={pgpClick}>
-            {pgp.fingerprint}
-          </a>
+          <PGPDialog pgp={pgp}>
+            <a href="#pgp" onClick={(e) => e.preventDefault()}>
+              {pgp.fingerprint}
+            </a>
+          </PGPDialog>
         </p>
       </div>
-      <Dialog
-        title="PGP Information"
-        shown={state.pgpDialogShown}
-        titleBarControls={
-          <button aria-label="Close" onClick={() => setState({ pgpDialogShown: false })}></button>
-        }
-      >
-        <p>
-          PGP Public Key &lt;{pgp.fingerprint}&gt;
-        </p>
-        <pre dangerouslySetInnerHTML={{ __html: pgpContent.replaceAll('\n', '<br>') }}></pre>
-        <section className="field-row justify-content-end mt-3">
-          <ExtLink href={pgp.url} onClick={() => trackEvent({ action: 'pgp_download_click' })}>
-            <button autoFocus={true}>Download</button>
-          </ExtLink>
-          <button onClick={() => setState({ pgpDialogShown: false })}>Close</button>
-        </section>
-      </Dialog>
     </>
   )
 }
