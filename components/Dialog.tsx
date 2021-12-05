@@ -17,8 +17,6 @@ type State = {
 }
 
 const Dialog = (props: Props) => {
-  if (!props.shown) return null
-
   const [state, setState] = useState<State>({
     isInactive: false,
   })
@@ -32,6 +30,8 @@ const Dialog = (props: Props) => {
   }
 
   const { width, height } = useWindowDimensions()
+
+  if (!props.shown) return null
 
   return (
     <>
