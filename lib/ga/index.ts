@@ -17,7 +17,7 @@ export const pageView = (url: string) => {
 // log specific events happening.
 type Event = {
   action: string
-  params: { [entry: string]: any } | null
+  params?: { [entry: string]: any } | null
 }
 
 export const trackEvent = ({ action, params }: Event) => {
