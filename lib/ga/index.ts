@@ -21,5 +21,6 @@ type Event = {
 }
 
 export const trackEvent = ({ action, params }: Event) => {
+  if (window.gtag)
   window.gtag('event', action, params)
 }
