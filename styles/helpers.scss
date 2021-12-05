@@ -2,12 +2,12 @@
   a {
     color: blue;
 
-    &:active {
-      color: red;
-    }
-
     &:visited {
       color: #551A8B;
+    }
+
+    &:active {
+      color: red;
     }
   }
 }
@@ -16,12 +16,12 @@
   a {
     color: yellow;
 
-    &:active {
-      color: red;
-    }
-
     &:visited {
       color: orange;
+    }
+
+    &:active {
+      color: red;
     }
   }
 }
