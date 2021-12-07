@@ -46,7 +46,7 @@ const PGPDialog = ({ pgp, children }: Props) => {
         <p>
           PGP Public Key &lt;{pgp.fingerprint}&gt;
         </p>
-        <pre dangerouslySetInnerHTML={{ __html: pgp.content.replaceAll('\n', '<br>') }}></pre>
+        <pre>{pgp.content}</pre>
         <section className="field-row justify-content-end mt-3">
           <ExtLink href={pgp.url} onClick={() => trackEvent({ action: 'pgp_download_click' })}>
             <button autoFocus={true}>Download</button>

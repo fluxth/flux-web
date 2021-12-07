@@ -5,7 +5,6 @@ import Image from 'next/image'
 
 import PGPDialog, { type PGPData } from '../components/PGPDialog'
 import ExtLink from '../components/ExtLink'
-import { escapeHtml } from '../lib/utils'
 
 import { REPO } from '../config'
 import config from '../_data/config.json'
@@ -41,13 +40,11 @@ export const getStaticProps: GetStaticProps = async () => {
   const pgpFetch = await fetch(config.pgp.url)
   if (!pgpFetch.ok) throw 'PGP Fetch Failed'
 
-  const pgpContent = escapeHtml(await pgpFetch.text())
-
   return {
     props: {
       links: config.homepage.links,
       badges: config.homepage.badges,
-      pgp: { ...config.pgp, content: pgpContent }
+      pgp: { ...config.pgp, content: await pgpFetch.text() }
     }
   }
 }

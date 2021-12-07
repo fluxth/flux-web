@@ -7,8 +7,6 @@ import SendEmailImage from '../assets/images/sendemail.gif'
 import ExtLink from '../components/ExtLink'
 import PGPDialog, { type PGPData } from '../components/PGPDialog'
 
-import { escapeHtml } from '../lib/utils'
-
 import config from '../_data/config.json'
 
 type Props = {
@@ -20,12 +18,10 @@ export const getStaticProps: GetStaticProps = async () => {
   const pgpFetch = await fetch(config.pgp.url)
   if (!pgpFetch.ok) throw 'PGP Fetch Failed'
 
-  const pgpContent = escapeHtml(await pgpFetch.text())
-
   return {
     props: {
       email: config.email,
-      pgp: { ...config.pgp, content: pgpContent },
+      pgp: { ...config.pgp, content: await pgpFetch.text() },
     }
   }
 }
