@@ -51,13 +51,13 @@ class Footer extends Component<Props, State> {
       this.setState({ darkThemeEnabled: true })
       window.localStorage.setItem(DARK_THEME_KEY, 'true')
       if (track)
-        trackEvent({ action: 'theme-change', params: { themeName: 'dark' } })
+        trackEvent({ action: 'theme_change', params: { themeName: 'dark' } })
     } else {
       bodyClassList.add('light-theme')
       this.setState({ darkThemeEnabled: false })
       window.localStorage.setItem(DARK_THEME_KEY, 'false')
       if (track)
-        trackEvent({ action: 'theme-change', params: { themeName: 'light' } })
+        trackEvent({ action: 'theme_change', params: { themeName: 'light' } })
     }
   }
 
