@@ -78,10 +78,12 @@
     "items": [
       {
         "name": "Coding Resume",
+        "updated": "August 22, 2021",
         "url": "/files/coding_resume.pdf"
       },
       {
         "name": "Media Resume",
+        "updated": "July 18, 2021",
         "url": "/files/media_resume.pdf"
       }
     ]

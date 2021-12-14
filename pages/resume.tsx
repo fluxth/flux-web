@@ -13,6 +13,7 @@ import styles from '../styles/Resume.module.scss'
 type Resume = {
   name: string
   url: string
+  updated?: string
 }
 
 type Props = {
@@ -47,7 +48,7 @@ const Resume: NextPage<Props> = ({ items }) => {
       <div className="text-center">
         <h2>View Resume</h2>
         <b>Select your flavor:</b>
-        <p className="mt-2">
+        <p className="my-2">
           {items.map((item, k) => (
             <button
               className={styles.button}
@@ -60,6 +61,11 @@ const Resume: NextPage<Props> = ({ items }) => {
             </button>
           ))}
         </p>
+        {state.selectedItem && state.selectedItem.updated ? (
+          <p className={styles.updatedText + " text-muted mt-0"}>
+            <b>Last Updated</b>: {state.selectedItem.updated}
+          </p>
+        ) : null}
         <div className="row">
           {state.selectedItem ? (
             <div className={styles.preview + " col-12 col-sm-11 col-md-10"}>
