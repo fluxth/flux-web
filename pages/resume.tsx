@@ -1,5 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
 import { useState } from 'react'
 
 import ExtLink from '../components/ExtLink'
@@ -9,6 +10,8 @@ import { trackEvent } from '../lib/ga'
 import config from '../_data/config.json'
 
 import styles from '../styles/Resume.module.scss'
+
+import StarIcon from '../assets/images/star_filled.gif'
 
 type Resume = {
   name: string
@@ -40,6 +43,9 @@ const Resume: NextPage<Props> = ({ items }) => {
     trackEvent({ action: 'resume_view', params: item })
   }
 
+  const starSize = 25;
+  const star = <Image src={StarIcon} unoptimized={true} width={starSize} height={starSize} />
+
   return (
     <>
       <Head>
@@ -70,15 +76,20 @@ const Resume: NextPage<Props> = ({ items }) => {
           {state.selectedItem ? (
             <div className={styles.preview + " col-12 col-sm-11 col-md-10"}>
               <iframe src={state.selectedItem.url + '#view=fitH'} />
-              [<ExtLink
-                href={state.selectedItem.url}
-                onClick={() => trackEvent({
-                  action: 'resume_download',
-                  params: state.selectedItem ? state.selectedItem : null
-                })}
-              >
-                Download PDF
-              </ExtLink>]
+              <div className={styles.download}>
+                {star}
+                <ExtLink
+                  href={state.selectedItem.url}
+                  className="mx-2"
+                  onClick={() => trackEvent({
+                    action: 'resume_download',
+                    params: state.selectedItem ? state.selectedItem : null
+                  })}
+                >
+                  Download PDF
+                </ExtLink>
+                {star}
+              </div>
             </div>
           ) : null}
         </div>
