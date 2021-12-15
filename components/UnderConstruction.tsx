@@ -10,12 +10,14 @@ const UnderConstruction = () => (
   <div className="text-center">
     <ConstructionBar />
     <h1 className="mb-0">Under Construction</h1>
-    <p className="mb-4">
-      Whoops, This page isn&apos;t available yet :(
-    </p>
+    <p className="mb-4">Whoops, This page isn&apos;t available yet :(</p>
     <ConstructionBar />
     <div className="my-4">
-      <Image src={UnderConstructionImage} alt="Under Construction" unoptimized={true} />
+      <Image
+        src={UnderConstructionImage}
+        alt="Under Construction"
+        unoptimized={true}
+      />
     </div>
   </div>
 )

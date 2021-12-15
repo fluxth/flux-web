@@ -11,8 +11,8 @@ const NotFound: NextPage = () => {
       <div className="text-center my-5">
         <h2>404 Not Found</h2>
         <p>
-          What you&apos;re looking for, is not here.<br />
-          [<Link href="/">Back to homepage</Link>]
+          What you&apos;re looking for, is not here.
+          <br />[<Link href="/">Back to homepage</Link>]
         </p>
       </div>
     </>

@@ -1,4 +1,4 @@
-import NavMenu from "./NavMenu"
+import NavMenu from './NavMenu'
 
 import styles from '../styles/Header.module.scss'
 

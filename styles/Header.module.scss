@@ -1,12 +1,28 @@
 @keyframes rainbow {
-  0%   { color: white }
-  14%  { color: yellow }
-  28%  { color: orange }
-  42%  { color: red }
-  56%  { color: #8769fd }
-  70%  { color: #5289f0 }
-  84%  { color: #00f1f1 }
-  100% { color: white }
+  0% {
+    color: white;
+  }
+  14% {
+    color: yellow;
+  }
+  28% {
+    color: orange;
+  }
+  42% {
+    color: red;
+  }
+  56% {
+    color: #8769fd;
+  }
+  70% {
+    color: #5289f0;
+  }
+  84% {
+    color: #00f1f1;
+  }
+  100% {
+    color: white;
+  }
 }
 
 $header-color-bg: #007e5f;

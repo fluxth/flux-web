@@ -1,4 +1,4 @@
-@import "~bootstrap/scss/bootstrap-utilities.scss";
+@import '~bootstrap/scss/bootstrap-utilities.scss';
 
 .button {
   font-size: 14px;
@@ -37,7 +37,8 @@
 }
 
 .updatedText {
-  &, b {
+  &,
+  b {
     font-size: 0.9rem;
   }
 }

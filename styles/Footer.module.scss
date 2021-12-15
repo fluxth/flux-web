@@ -10,7 +10,7 @@
       transform: translate(-50%, 0);
     }
 
-    > a[href="#switch-theme"][data-switch-to="dark-theme"] {
+    > a[href='#switch-theme'][data-switch-to='dark-theme'] {
       &:hover {
         color: black;
         text-decoration: none;

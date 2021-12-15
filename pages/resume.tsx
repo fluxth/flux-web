@@ -30,8 +30,8 @@ type State = {
 export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
-      items: config.resume.items
-    }
+      items: config.resume.items,
+    },
   }
 }
 
@@ -43,8 +43,15 @@ const Resume: NextPage<Props> = ({ items }) => {
     trackEvent({ action: 'resume_view', params: item })
   }
 
-  const starSize = 25;
-  const star = <Image src={StarIcon} unoptimized={true} width={starSize} height={starSize} />
+  const starSize = 25
+  const star = (
+    <Image
+      src={StarIcon}
+      unoptimized={true}
+      width={starSize}
+      height={starSize}
+    />
+  )
 
   return (
     <>
@@ -61,31 +68,31 @@ const Resume: NextPage<Props> = ({ items }) => {
               key={item.url}
               autoFocus={k === 0}
               disabled={state.selectedItem === item}
-              onClick={() => buttonClick(item)}
-            >
+              onClick={() => buttonClick(item)}>
               {item.name}
             </button>
           ))}
         </p>
         {state.selectedItem && state.selectedItem.updated ? (
-          <p className={styles.updatedText + " text-muted mt-0"}>
+          <p className={styles.updatedText + ' text-muted mt-0'}>
             <b>Last Updated</b>: {state.selectedItem.updated}
           </p>
         ) : null}
         <div className="row">
           {state.selectedItem ? (
-            <div className={styles.preview + " col-12 col-sm-11 col-md-10"}>
+            <div className={styles.preview + ' col-12 col-sm-11 col-md-10'}>
               <iframe src={state.selectedItem.url + '#view=fitH'} />
               <div className={styles.download}>
                 {star}
                 <ExtLink
                   href={state.selectedItem.url}
                   className="mx-2"
-                  onClick={() => trackEvent({
-                    action: 'resume_download',
-                    params: state.selectedItem ? state.selectedItem : null
-                  })}
-                >
+                  onClick={() =>
+                    trackEvent({
+                      action: 'resume_download',
+                      params: state.selectedItem ? state.selectedItem : null,
+                    })
+                  }>
                   Download PDF
                 </ExtLink>
                 {star}

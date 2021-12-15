@@ -22,7 +22,7 @@ type State = {
 
 const PGPDialog = ({ pgp, children }: Props) => {
   const [state, setState] = useState<State>({
-    shown: false
+    shown: false,
   })
 
   const pgpClick = (event: MouseEvent<HTMLDivElement>) => {
@@ -40,15 +40,16 @@ const PGPDialog = ({ pgp, children }: Props) => {
         title="PGP Information"
         shown={state.shown}
         titleBarControls={
-          <button aria-label="Close" onClick={() => setState({ shown: false })}></button>
-        }
-      >
-        <p>
-          PGP Public Key &lt;{pgp.fingerprint}&gt;
-        </p>
+          <button
+            aria-label="Close"
+            onClick={() => setState({ shown: false })}></button>
+        }>
+        <p>PGP Public Key &lt;{pgp.fingerprint}&gt;</p>
         <pre>{pgp.content}</pre>
         <section className="field-row justify-content-end mt-3">
-          <ExtLink href={pgp.url} onClick={() => trackEvent({ action: 'pgp_download_click' })}>
+          <ExtLink
+            href={pgp.url}
+            onClick={() => trackEvent({ action: 'pgp_download_click' })}>
             <button autoFocus={true}>Download</button>
           </ExtLink>
           <button onClick={() => setState({ shown: false })}>Close</button>

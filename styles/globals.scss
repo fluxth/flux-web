@@ -1,38 +1,38 @@
-@import "~bootstrap/scss/bootstrap-grid.scss";
-@import "~bootstrap/scss/bootstrap-utilities.scss";
+@import '~bootstrap/scss/bootstrap-grid.scss';
+@import '~bootstrap/scss/bootstrap-utilities.scss';
 
-@import "~98.css/dist/98.css";
+@import '~98.css/dist/98.css';
 
 @import './helpers.scss';
 
 @font-face {
-  font-family: "PX-CourBD16";
-  src: url("../assets/fonts/COURBD-16-Bold.woff") format("woff");
+  font-family: 'PX-CourBD16';
+  src: url('../assets/fonts/COURBD-16-Bold.woff') format('woff');
 }
 
 @font-face {
-  font-family: "PX-Times16";
-  src: url("../assets/fonts/TIMES-16-Regular.woff") format("woff");
+  font-family: 'PX-Times16';
+  src: url('../assets/fonts/TIMES-16-Regular.woff') format('woff');
 }
 
 @font-face {
-  font-family: "PX-TimesBd16";
-  src: url("../assets/fonts/TIMESBD-16-Bold.woff") format("woff");
+  font-family: 'PX-TimesBd16';
+  src: url('../assets/fonts/TIMESBD-16-Bold.woff') format('woff');
 }
 
 @font-face {
-  font-family: "PX-TimesBd24";
-  src: url("../assets/fonts/TIMESBD-24-Bold.woff") format("woff");
+  font-family: 'PX-TimesBd24';
+  src: url('../assets/fonts/TIMESBD-24-Bold.woff') format('woff');
 }
 
 @font-face {
-  font-family: "PX-TimesBd32";
-  src: url("../assets/fonts/TIMESBD-32-Bold.woff") format("woff");
+  font-family: 'PX-TimesBd32';
+  src: url('../assets/fonts/TIMESBD-32-Bold.woff') format('woff');
 }
 
 @font-face {
-  font-family: "PX-TimesI16";
-  src: url("../assets/fonts/TIMESI-16-Italic.woff") format("woff");
+  font-family: 'PX-TimesI16';
+  src: url('../assets/fonts/TIMESI-16-Italic.woff') format('woff');
 }
 
 html,
@@ -40,6 +40,7 @@ body {
   padding: 0;
   margin: 0;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -77,25 +78,26 @@ body {
     border-top: 1px solid #c0c0c0;
     border-left: 1px solid #c0c0c0;
     border-bottom: 1px solid #808080;
-    border-right: 1px solid #808080
+    border-right: 1px solid #808080;
   }
 
-  th,td {
+  th,
+  td {
     padding: 5px;
     border-top: 1px solid #808080;
     border-left: 1px solid #808080;
     border-bottom: 1px solid #c0c0c0;
-    border-right: 1px solid #c0c0c0
+    border-right: 1px solid #c0c0c0;
   }
 
   img {
-    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
-    image-rendering: -moz-crisp-edges;          /* Firefox                        */
-    image-rendering: -o-crisp-edges;            /* Opera                          */
-    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-    image-rendering: pixelated;                 /* Chrome */
-    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
-    -ms-interpolation-mode: nearest-neighbor; 
+    image-rendering: optimizeSpeed; // STOP SMOOTHING, GIVE ME SPEED
+    image-rendering: -moz-crisp-edges; // Firefox
+    image-rendering: -o-crisp-edges; // Opera
+    image-rendering: -webkit-optimize-contrast; // Chrome (and eventually Safari)
+    image-rendering: pixelated; // Chrome
+    image-rendering: optimize-contrast; // CSS3 Proposed
+    -ms-interpolation-mode: nearest-neighbor;
   }
 
   u {
@@ -111,11 +113,12 @@ body {
 body {
   &.light-theme {
     background: linear-gradient(
-                  180deg,
-                  rgba(255,255,255,0.3) 50%,
-                  rgba(0,0,0,0) 50%,
-                  rgba(0,0,0,0) 0
-                ), #f7f7f7;
+        180deg,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(0, 0, 0, 0) 50%,
+        rgba(0, 0, 0, 0) 0
+      ),
+      #f7f7f7;
     background-size: auto 4px;
 
     @include light-theme-links;

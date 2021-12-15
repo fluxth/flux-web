@@ -32,7 +32,8 @@ class Footer extends Component<Props, State> {
 
     const bodyDarkTheme = bodyClassList.contains('dark-theme')
 
-    const savedDarkTheme = window.localStorage.getItem(DARK_THEME_KEY) === 'true'
+    const savedDarkTheme =
+      window.localStorage.getItem(DARK_THEME_KEY) === 'true'
     if (bodyDarkTheme !== savedDarkTheme) {
       this.setDarkTheme(savedDarkTheme, false)
     }
@@ -68,17 +69,22 @@ class Footer extends Component<Props, State> {
 
   render() {
     return (
-      <footer className={styles.footer + " my-4 text-muted text-center"}>
-        &copy; {new Date().getFullYear()}, Thitat Auareesuksakul.<br />
+      <footer className={styles.footer + ' my-4 text-muted text-center'}>
+        &copy; {new Date().getFullYear()}, Thitat Auareesuksakul.
+        <br />
         Inspired by homepages from early WWW era :)
-        <div className={styles.darkSideToggle + " mt-2"}>
-          [<a
+        <div className={styles.darkSideToggle + ' mt-2'}>
+          [
+          <a
             href="#switch-theme"
-            data-switch-to={this.state.darkThemeEnabled ? 'light-theme' : 'dark-theme'}
-            onClick={this.switchTheme.bind(this)}
-          >
-            Switch to {this.state.darkThemeEnabled ? 'Light Mode' : 'the Dark Side'}
-          </a>]
+            data-switch-to={
+              this.state.darkThemeEnabled ? 'light-theme' : 'dark-theme'
+            }
+            onClick={this.switchTheme.bind(this)}>
+            Switch to{' '}
+            {this.state.darkThemeEnabled ? 'Light Mode' : 'the Dark Side'}
+          </a>
+          ]
           <div className={styles.darkSidePopover}>
             <Image src={DarkSideImage} unoptimized={true} />
           </div>
@@ -87,6 +93,5 @@ class Footer extends Component<Props, State> {
     )
   }
 }
-
 
 export default Footer
