@@ -6,7 +6,6 @@ import Image from 'next/image'
 import PGPDialog, { type PGPData } from '../components/PGPDialog'
 import ExtLink from '../components/ExtLink'
 
-import { REPO } from '../config'
 import config from '../_data/config.json'
 
 import styles from '../styles/Home.module.scss'
@@ -69,7 +68,7 @@ const Home: NextPage<Props> = ({ links, badges, pgp }) => {
       </p>
       <p>
         This site is 100% open-source and available
-        at <ExtLink href={REPO.url}>this GitHub repo</ExtLink>.
+        at <ExtLink href={config.repo_url}>this GitHub repository</ExtLink>.
       </p>
       <div className="row">
         <div className="col-12 col-sm-6">

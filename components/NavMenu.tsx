@@ -3,7 +3,11 @@ import Link from 'next/link'
 
 import { trackEvent } from '../lib/ga'
 
-import { NAVMENU_ITEMS } from '../config'
+import GlobeImage from '../assets/images/globe.gif'
+import InfoImage from '../assets/images/info.png'
+import PhoneBookImage from '../assets/images/phone_book.gif'
+import FolderFontsImage from '../assets/images/folder_fonts.png'
+import FileQuestionImage from '../assets/images/file_question.png'
 
 import styles from '../styles/NavMenu.module.scss'
 
@@ -12,6 +16,34 @@ export type MenuItem = {
   image?: StaticImageData | string
   url?: string
 }
+
+export const NAVMENU_ITEMS: MenuItem[] = [
+  {
+    name: 'Home Page',
+    image: GlobeImage,
+    url: '/',
+  },
+  {
+    name: 'Blog',
+    image: FolderFontsImage,
+    url: '/blog',
+  },
+  {
+    name: 'Portfolio',
+    image: PhoneBookImage,
+    url: '/portfolio',
+  },
+  {
+    name: 'Resume',
+    image: FileQuestionImage,
+    url: '/resume',
+  },
+  {
+    name: 'Contact Info',
+    image: InfoImage,
+    url: '/contact',
+  },
+]
 
 const menuClick = (item: MenuItem) => {
   trackEvent({
