@@ -57,17 +57,30 @@ const Home: NextPage<Props> = ({ links, badges, pgp }) => {
       <Image src={WelcomeImage} unoptimized={true} />
       <p>
         <Link href="/">flux.ci</Link> is a personal website owned by{' '}
-        <b>Thitat Auareesuksakul</b>, a software engineer and audio enthusiast.
+        <b>Thitat Auareesuksakul</b>, a software engineer and sound editor.
+      </p>
+      <p>
+        <b>What I do?</b>
+        <ul className="my-0">
+          <li>
+            <u>Software development</u>, full-time;
+            Full-stack web development, <i>compatible</i> with most modern frameworks :)
+          </li>
+          <li>
+            <u>Sound editing and mixing</u>, freelance; series, shortfilms, adverts, music, etc.
+          </li>
+          <li>Probably more, check out my <Link href="/portfolio">portfolio</Link>!</li>
+        </ul>
       </p>
       <p>
         This nostalgic <b>Web 2.0</b> experience, despite its looks, is powered by the
-        futuristic <ExtLink href="https://nextjs.org/"><i>NextJS</i></ExtLink> framework.
+        futuristic <ExtLink href="https://nextjs.org"><i>NextJS</i></ExtLink> framework.
         <br />
         <u>Fun Fact:</u> The navigation table above isn&apos;t a table, but flexbox divs!
         Use <ExtLink href="https://getfirebug.com">Firebug</ExtLink> to see them in action!
       </p>
       <p>
-        This site is 100% open-source and available
+        This site is 100% open-source and is available
         at <ExtLink href={config.repo_url}>this GitHub repository</ExtLink>.
       </p>
       <div className="row">
