@@ -10,6 +10,7 @@ indent_style = space
 indent_size = 4
 
 [*.{css,scss,js,jsx,ts,tsx,html,json}]
+max_line_length = 100
 indent_size = 2
 
 [Makefile]
