@@ -1,9 +1,9 @@
-import type { NextPage, GetStaticProps } from 'next'
+import type {NextPage, GetStaticProps} from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import PGPDialog, { type PGPData } from '../components/PGPDialog'
+import PGPDialog, {type PGPData} from '../components/PGPDialog'
 import ExtLink from '../components/ExtLink'
 
 import config from '../_data/config.json'
@@ -43,18 +43,18 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       links: config.homepage.links,
       badges: config.homepage.badges,
-      pgp: { ...config.pgp, content: await pgpFetch.text() }
+      pgp: {...config.pgp, content: await pgpFetch.text()}
     }
   }
 }
 
-const Home: NextPage<Props> = ({ links, badges, pgp }) => {
+const Home: NextPage<Props> = ({links, badges, pgp}) => {
   return (
     <>
       <Head>
         <title>Home - flux.ci</title>
       </Head>
-      <Image src={WelcomeImage} unoptimized={true} />
+      <Image src={WelcomeImage} alt="Welcome" unoptimized={true} />
       <p>
         <Link href="/">flux.ci</Link> is a personal website owned by{' '}
         <b>Thitat Auareesuksakul</b>, a software engineer and sound editor.
