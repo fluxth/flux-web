@@ -110,7 +110,7 @@ const Portfolio: NextPage<Props> = ({ portfolio }) => {
                   <div className={styles.descriptions + ' text-secondary'}>
                     <ul>
                       {project.descriptions.map((desc) => (
-                        <li>{desc}</li>
+                        <li key={desc}>{desc}</li>
                       ))}
                     </ul>
                   </div>
@@ -131,8 +131,8 @@ const Portfolio: NextPage<Props> = ({ portfolio }) => {
           id="media"
           icon={<Image src={VHSImage} width={30} height={20} unoptimized={true} />}>
           <div className="row">
-            {portfolio.media.map((project) => (
-              <div className={styles.mediaProject + ' col-12 col-sm-6'}>
+            {portfolio.media.map((project, i) => (
+              <div className={styles.mediaProject + ' col-12 col-sm-6'} key={i}>
                 <div className={styles.heading}>
                   <b>{project.title}</b>
                   <i className="text-secondary">{project.subtitle}</i>
@@ -149,7 +149,11 @@ const Portfolio: NextPage<Props> = ({ portfolio }) => {
                         <>
                           [{project.action.name}:{' '}
                           {Array.from(Array(project.action.url.length).keys())
-                            .map((i) => <ExtLink href={project.action?.url[i]}>{i + 1}</ExtLink>)
+                            .map((i) => (
+                              <ExtLink href={project.action?.url[i]} key={i}>
+                                {i + 1}
+                              </ExtLink>
+                            ))
                             .reduce((prev, curr) => (
                               <>{[prev, ', ', curr]}</>
                             ))}
