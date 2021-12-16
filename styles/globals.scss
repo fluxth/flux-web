@@ -123,6 +123,10 @@ body {
     background-size: auto 4px;
     color: #222;
 
+    .text-secondary {
+      color: #777 !important;
+    }
+
     @include light-theme-links;
   }
 
@@ -131,7 +135,22 @@ body {
     background: url('../assets/images/stars-background.gif'), black;
     color: #ddd;
 
+    .text-secondary {
+      color: #999 !important;
+    }
+
     @include dark-theme-links;
+  }
+}
+
+.modern {
+  &,
+  h1,
+  h2,
+  b,
+  i {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.3em;
   }
 }
 
