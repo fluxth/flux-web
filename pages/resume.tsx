@@ -44,14 +44,7 @@ const Resume: NextPage<Props> = ({ items }) => {
   }
 
   const starSize = 25
-  const star = (
-    <Image
-      src={StarIcon}
-      unoptimized={true}
-      width={starSize}
-      height={starSize}
-    />
-  )
+  const star = <Image src={StarIcon} alt="" unoptimized={true} width={starSize} height={starSize} />
 
   return (
     <>

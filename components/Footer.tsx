@@ -32,8 +32,7 @@ class Footer extends Component<Props, State> {
 
     const bodyDarkTheme = bodyClassList.contains('dark-theme')
 
-    const savedDarkTheme =
-      window.localStorage.getItem(DARK_THEME_KEY) === 'true'
+    const savedDarkTheme = window.localStorage.getItem(DARK_THEME_KEY) === 'true'
     if (bodyDarkTheme !== savedDarkTheme) {
       this.setDarkTheme(savedDarkTheme, false)
     }
@@ -51,14 +50,12 @@ class Footer extends Component<Props, State> {
       bodyClassList.add('dark-theme')
       this.setState({ darkThemeEnabled: true })
       window.localStorage.setItem(DARK_THEME_KEY, 'true')
-      if (track)
-        trackEvent({ action: 'theme_change', params: { themeName: 'dark' } })
+      if (track) trackEvent({ action: 'theme_change', params: { themeName: 'dark' } })
     } else {
       bodyClassList.add('light-theme')
       this.setState({ darkThemeEnabled: false })
       window.localStorage.setItem(DARK_THEME_KEY, 'false')
-      if (track)
-        trackEvent({ action: 'theme_change', params: { themeName: 'light' } })
+      if (track) trackEvent({ action: 'theme_change', params: { themeName: 'light' } })
     }
   }
 
@@ -77,16 +74,13 @@ class Footer extends Component<Props, State> {
           [
           <a
             href="#switch-theme"
-            data-switch-to={
-              this.state.darkThemeEnabled ? 'light-theme' : 'dark-theme'
-            }
+            data-switch-to={this.state.darkThemeEnabled ? 'light-theme' : 'dark-theme'}
             onClick={this.switchTheme.bind(this)}>
-            Switch to{' '}
-            {this.state.darkThemeEnabled ? 'Light Mode' : 'the Dark Side'}
+            Switch to {this.state.darkThemeEnabled ? 'Light Mode' : 'the Dark Side'}
           </a>
           ]
           <div className={styles.darkSidePopover}>
-            <Image src={DarkSideImage} unoptimized={true} />
+            <Image src={DarkSideImage} alt="" unoptimized={true} />
           </div>
         </div>
       </footer>

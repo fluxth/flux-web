@@ -90,7 +90,7 @@ const Portfolio: NextPage<Props> = ({ portfolio }) => {
         <PortfolioSection
           name="Coding"
           id="coding"
-          icon={<Image src={ComputerImage} width={25} height={20} unoptimized={true} />}>
+          icon={<Image src={ComputerImage} alt="" width={25} height={20} unoptimized={true} />}>
           <>
             {portfolio.coding.map((project, i) => (
               <div className={styles.codeProject} key={i}>
@@ -129,7 +129,7 @@ const Portfolio: NextPage<Props> = ({ portfolio }) => {
         <PortfolioSection
           name="Media"
           id="media"
-          icon={<Image src={VHSImage} width={30} height={20} unoptimized={true} />}>
+          icon={<Image src={VHSImage} alt="" width={30} height={20} unoptimized={true} />}>
           <div className="row">
             {portfolio.media.map((project, i) => (
               <div className={styles.mediaProject + ' col-12 col-sm-6'} key={i}>
@@ -173,7 +173,7 @@ const Portfolio: NextPage<Props> = ({ portfolio }) => {
             name="Random Stuff"
             id="random"
             icon={
-              <Image src={SmileyImage} width={20} height={20} unoptimized={true} />
+              <Image src={SmileyImage} alt="" width={20} height={20} unoptimized={true} />
             }></PortfolioSection>
         ) : null}
 
