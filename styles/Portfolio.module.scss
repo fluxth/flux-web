@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+
+  h1 {
+    margin: 0;
+  }
+
+  button,
+  button:active {
+    padding: 0.5rem 1rem;
+  }
+}
+
+.section {
+  margin-bottom: 1.5rem;
+
+  h2 {
+    text-decoration: underline;
+  }
+
+  .codeProject {
+    margin-bottom: 1.5rem;
+
+    .heading {
+      margin-bottom: 0.2rem;
+    }
+
+    .descriptions {
+      ul {
+        margin: 0;
+      }
+    }
+  }
+
+  .mediaProject {
+    margin-bottom: 1.75rem;
+
+    .heading {
+      margin-bottom: 0.75rem;
+
+      b,
+      i {
+        display: block;
+      }
+
+      b {
+        font-size: 18px;
+      }
+    }
+  }
+}
