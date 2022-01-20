@@ -47,7 +47,7 @@ export const NAVMENU_ITEMS: MenuItem[] = [
 
 const menuClick = (item: MenuItem) => {
   trackEvent({
-    action: 'navmenu-click',
+    action: 'navmenu_click',
     params: {
       name: item.name,
     },
