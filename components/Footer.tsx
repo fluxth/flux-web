@@ -24,23 +24,23 @@ class Footer extends Component<Props, State> {
   }
 
   componentDidMount() {
-    const bodyClassList = document.querySelector('body')?.classList
-    if (!bodyClassList) {
-      this.setState({ darkThemeEnabled: false })
-      return
-    }
-
-    const bodyDarkTheme = bodyClassList.contains('dark-theme')
-
-    const savedDarkTheme = window.localStorage.getItem(DARK_THEME_KEY) === 'true'
-    if (bodyDarkTheme !== savedDarkTheme) {
-      this.setDarkTheme(savedDarkTheme, false)
+    const bodyDarkTheme = document.body.classList.contains('dark-theme')
+    const savedDarkTheme = window.localStorage.getItem(DARK_THEME_KEY)
+    if (savedDarkTheme !== null) {
+      // Has saved preference in localStorage
+      const savedDarkThemeValue = savedDarkTheme === 'true'
+      if (bodyDarkTheme !== savedDarkThemeValue) this.setDarkTheme(savedDarkThemeValue, false)
+    } else {
+      // Use CSS dark mode value
+      if (window.matchMedia) {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches)
+          this.setDarkTheme(true, false)
+      }
     }
   }
 
   setDarkTheme(enabled: boolean, track?: boolean) {
-    const bodyClassList = document.querySelector('body')?.classList
-    if (!bodyClassList) return
+    const bodyClassList = document.body.classList
 
     // Clear themes
     bodyClassList.remove('light-theme')
