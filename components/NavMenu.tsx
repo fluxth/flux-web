@@ -15,6 +15,7 @@ export type MenuItem = {
   name: string
   image?: StaticImageData | string
   url?: string
+  external?: boolean
 }
 
 export const NAVMENU_ITEMS: MenuItem[] = [
@@ -26,7 +27,8 @@ export const NAVMENU_ITEMS: MenuItem[] = [
   {
     name: 'Blog',
     image: FolderFontsImage,
-    url: '/blog',
+    url: '/blog/',
+    external: true,
   },
   {
     name: 'Portfolio',
@@ -54,41 +56,41 @@ const menuClick = (item: MenuItem) => {
   })
 }
 
+const renderNavLink = (item: MenuItem) => {
+  if (item.url) {
+    if (item.external) return <a href={item.url}>{item.name}</a>
+    else
+      return (
+        <Link href={item.url}>
+          <a onClick={() => menuClick(item)}>{item.name}</a>
+        </Link>
+      )
+  }
+
+  return (
+    <a
+      href="#"
+      onClick={(e) => {
+        e.preventDefault()
+        menuClick(item)
+      }}>
+      {item.name}
+    </a>
+  )
+}
+
 const NavMenu = () => (
   <>
     <div>
       <div className={'row ' + styles.navMenu}>
         {NAVMENU_ITEMS.map((i) => (
-          <div
-            className={'col-12 col-md-auto ' + styles.navMenuItem}
-            key={i.name + i.url}>
+          <div className={'col-12 col-md-auto ' + styles.navMenuItem} key={i.name + i.url}>
             {i.image ? (
               <div className={styles.navMenuItemImage}>
-                <Image
-                  src={i.image}
-                  alt={i.name}
-                  height={32}
-                  width={32}
-                  unoptimized={true}
-                />
+                <Image src={i.image} alt={i.name} height={32} width={32} unoptimized={true} />
               </div>
             ) : null}
-            <b>
-              {i.url ? (
-                <Link href={i.url}>
-                  <a onClick={() => menuClick(i)}>{i.name}</a>
-                </Link>
-              ) : (
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    menuClick(i)
-                  }}>
-                  {i.name}
-                </a>
-              )}
-            </b>
+            <b>{renderNavLink(i)}</b>
           </div>
         ))}
       </div>
