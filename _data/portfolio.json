@@ -13,6 +13,16 @@
       ]
     },
     {
+      "title": "flux.ci authentication service",
+      "repo_url": "https://github.com/fluxth/flux-web-auth",
+      "app_url": "https://auth.flux.ci",
+      "technologies": ["Rust", "Diesel ORM", "PostgreSQL", "Webpack"],
+      "descriptions": [
+        "JWT-based web authentication service, used by services throughout the entire personal site",
+        "Currently redesigning the system to use SvelteKit, TailwindCSS, and gRPC with Rust backend (in git 'next' branch)"
+      ]
+    },
+    {
       "title": "vouchergen",
       "repo_url": "https://github.com/fluxth/vouchergen",
       "app_url": "https://flux.ci/vouchergen",
@@ -27,8 +37,9 @@
       "repo_url": "https://github.com/fluxth/RadioLogger5",
       "technologies": ["Python", "React", "Redux", "SQLAlchemy", "PostgreSQL"],
       "descriptions": [
-        "Generates printable WiFi vouchers from MikroTik 'userman' CSVs",
-        "Fully static website running entirely on the client side"
+        "Multithreaded logging daemon for collecting song history played by multiple radio stations",
+        "Web UI written in React with Flask backend to display logged items and their rankings",
+        "Map logged songs to Spotify tracks and create new Spotify playlists each month"
       ]
     },
     {
