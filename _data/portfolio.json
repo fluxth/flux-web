@@ -16,7 +16,7 @@
       "title": "flux.ci authentication service",
       "repo_url": "https://github.com/fluxth/flux-web-auth",
       "app_url": "https://auth.flux.ci",
-      "technologies": ["Rust", "Diesel ORM", "PostgreSQL", "Webpack"],
+      "technologies": ["Rust", "Rocket", "Diesel ORM", "PostgreSQL", "Webpack"],
       "descriptions": [
         "JWT-based web authentication service, used by services throughout the entire personal site",
         "Currently redesigning the system to use SvelteKit, TailwindCSS, and gRPC with Rust backend (in git 'next' branch)"
