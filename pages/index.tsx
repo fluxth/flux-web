@@ -80,6 +80,10 @@ const Home: NextPage<Props> = ({links, badges, pgp}) => {
         Use <ExtLink href="https://getfirebug.com">Firebug</ExtLink> to see them in action!
       </p>
       <p>
+        Ooh! and try this link to <a href="/totallynota404page">a page that doesn&apos;t exist</a>.
+        You should see a <i>familiar</i> error screen ;)
+      </p>
+      <p>
         This site is 100% open-source and is available
         at <ExtLink href={config.repo_url}>this GitHub repository</ExtLink>.
       </p>
