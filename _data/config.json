@@ -31,22 +31,22 @@
     "badges": [
       {
         "src": "linux2_jaekel.gif",
-        "url": "https://www.kernel.org",
+        "url": "https://web.archive.org/web/20040701032428id_/http://www.kernel.org/",
         "title": "Ditch Windows, Use Linux!"
       },
       {
         "src": "knbutton.gif",
-        "url": "https://kde.org",
+        "url": "https://web.archive.org/web/20060101015657if_/http://www.kde.org/",
         "title": "KDE 3.5"
       },
       {
         "src": "ie.gif",
-        "url": "https://microsoft.com/ie",
+        "url": "https://web.archive.org/web/20040603213654if_/http://www.microsoft.com/windows/ie/enthusiast/default.mspx",
         "title": "Internet Explorer"
       },
       {
         "src": "ffrediscover.gif",
-        "url": "https://www.mozilla.org/firefox/",
+        "url": "https://web.archive.org/web/20041001021147if_/http://www.mozilla.org/products/firefox/",
         "title": "Firefox"
       },
       "now20_button.gif",
@@ -55,7 +55,7 @@
       "bookmark_this_page.gif",
       {
         "src": "apple.gif",
-        "url": "https://www.apple.com"
+        "url": "https://web.archive.org/web/20050401084659if_/http://www.apple.com/"
       },
       {
         "src": "hotmail.gif",
@@ -63,7 +63,7 @@
       },
       {
         "src": "macos.gif",
-        "url": "https://www.apple.com/macos"
+        "url": "https://web.archive.org/web/20050401064306if_/http://www.apple.com/macosx/"
       },
       "got_html.gif",
       "any88x31.gif",
