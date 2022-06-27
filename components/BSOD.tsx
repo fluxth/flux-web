@@ -25,7 +25,7 @@ const BSOD = ({ url, children }: Props) => {
         <p className={styles.heading}>flux.ci</p>
         <div className={styles.content}>
           <p>
-            A fatal exception {children} has occured at {url ? url : '0069:BABE0420'}. The current
+            A fatal exception {children} has occured at {url ? url : '4242:BEEFCAFE'}. The current
             webpage will be terminated.
           </p>
           <ul>
