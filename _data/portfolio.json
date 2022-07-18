@@ -25,7 +25,7 @@
     {
       "title": "vouchergen",
       "repo_url": "https://github.com/fluxth/vouchergen",
-      "app_url": "https://flux.ci/vouchergen",
+      "app_url": "https://fluxth.github.io/vouchergen",
       "technologies": ["NextJS", "Typescript", "SASS"],
       "descriptions": [
         "Generates printable WiFi vouchers from MikroTik 'userman' CSVs",
