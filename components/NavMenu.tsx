@@ -27,7 +27,7 @@ export const NAVMENU_ITEMS: MenuItem[] = [
   {
     name: 'Blog',
     image: FolderFontsImage,
-    url: '/blog/',
+    url: 'https://blog.flux.ci',
     external: true,
   },
   {
