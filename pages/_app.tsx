@@ -54,6 +54,16 @@ function MyApp({ Component, pageProps }: AppProps) {
         <div className="row">
           <div className="main col">
             <Header title="( flux.ci )" {...pageProps} />
+            <div className="deprecation-notice">
+              <p>NOTICE:</p>
+              This website is now deprecated and may be removed at anytime!
+              <br />
+              Please visit my updated website at{' '}
+              <b>
+                <a href="https://thitat.net">https://thitat.net</a>
+              </b>
+              .
+            </div>
             <Component {...pageProps} />
             <Footer {...pageProps} />
           </div>

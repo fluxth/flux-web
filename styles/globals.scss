@@ -133,6 +133,10 @@ body {
     }
 
     @include light-theme-links;
+
+    .deprecation-notice {
+      border: 2px #000 solid;
+    }
   }
 
   &.dark-theme {
@@ -161,4 +165,23 @@ body {
 
 .text-red {
   color: red;
+}
+
+.deprecation-notice {
+  text-align: center;
+  margin: 2rem 0;
+  background-color: #a00;
+  padding: 0.75rem;
+  color: #fff;
+  border: 2px #fff solid;
+
+  p {
+    font-family: PX-TimesBd16, 'Times New Romain', serif;
+    font-size: 20px;
+    margin: 0;
+  }
+
+  a {
+    color: yellow !important;
+  }
 }
