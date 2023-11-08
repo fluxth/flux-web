@@ -1,5 +1,5 @@
 import { Component, MouseEvent } from 'react'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 import { trackEvent } from '../lib/ga'
 import styles from '../styles/Footer.module.scss'
@@ -75,7 +75,8 @@ class Footer extends Component<Props, State> {
           <a
             href="#switch-theme"
             data-switch-to={this.state.darkThemeEnabled ? 'light-theme' : 'dark-theme'}
-            onClick={this.switchTheme.bind(this)}>
+            onClick={this.switchTheme.bind(this)}
+          >
             Switch to {this.state.darkThemeEnabled ? 'Light Mode' : 'the Dark Side'}
           </a>
           ]

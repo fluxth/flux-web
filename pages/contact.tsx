@@ -1,6 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 import SendEmailImage from '../assets/images/sendemail.gif'
 
@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       email: config.email,
       pgp: { ...config.pgp, content: await pgpFetch.text() },
-    }
+    },
   }
 }
 
@@ -34,12 +34,11 @@ const Contact: NextPage<Props> = ({ email, pgp }) => {
       </Head>
       <div className="text-center">
         <h2>Contact Info</h2>
-        <ExtLink href={"mailto:" + email}>
+        <ExtLink href={'mailto:' + email}>
           <Image src={SendEmailImage} alt="Send Email" unoptimized={true} />
         </ExtLink>
-        <p>
-          Contact me via E-mail:{' '}
-          <ExtLink href={"mailto:" + email}>{email}</ExtLink>
+        <div className="p">
+          Contact me via E-mail: <ExtLink href={'mailto:' + email}>{email}</ExtLink>
           <br />
           My PGP public key is{' '}
           <PGPDialog pgp={pgp}>
@@ -47,7 +46,7 @@ const Contact: NextPage<Props> = ({ email, pgp }) => {
               {pgp.fingerprint}
             </a>
           </PGPDialog>
-        </p>
+        </div>
       </div>
     </>
   )

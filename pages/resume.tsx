@@ -1,6 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import { useState } from 'react'
 
 import ExtLink from '../components/ExtLink'
@@ -61,7 +61,8 @@ const Resume: NextPage<Props> = ({ items }) => {
               key={item.url}
               autoFocus={k === 0}
               disabled={state.selectedItem === item}
-              onClick={() => buttonClick(item)}>
+              onClick={() => buttonClick(item)}
+            >
               {item.name}
             </button>
           ))}
@@ -85,7 +86,8 @@ const Resume: NextPage<Props> = ({ items }) => {
                       action: 'resume_download',
                       params: state.selectedItem ? state.selectedItem : null,
                     })
-                  }>
+                  }
+                >
                   Download PDF
                 </ExtLink>
                 {star}

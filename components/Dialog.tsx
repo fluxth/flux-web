@@ -43,11 +43,8 @@ const Dialog = (props: Props) => {
       >
         <div className={styles.dialog}>
           <div className="window">
-            <div
-              className={'title-bar' + (state.isInactive ? ' inactive' : '')}>
-              <div className="title-bar-text">
-                {props.title ? props.title : 'Dialog'}
-              </div>
+            <div className={'title-bar' + (state.isInactive ? ' inactive' : '')}>
+              <div className="title-bar-text">{props.title ? props.title : 'Dialog'}</div>
               <div className="title-bar-controls">{props.titleBarControls}</div>
             </div>
             <div className="window-body">{props.children}</div>

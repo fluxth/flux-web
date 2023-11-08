@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import ConstructionBarImage from '../assets/images/construction_bar.gif'
 import UnderConstructionImage from '../assets/images/under_construction.gif'
 import UnderConstructionImage2 from '../assets/images/f_unco.png'

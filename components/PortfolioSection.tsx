@@ -24,7 +24,8 @@ const PortfolioSection = (props: Props) => (
           e.preventDefault()
           window.scroll(window.screenX, 0)
           console.log(window.screenX)
-        }}>
+        }}
+      >
         Back to top
       </a>
       ]

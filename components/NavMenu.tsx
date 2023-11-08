@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from 'next/image'
+import Image, { StaticImageData } from 'next/legacy/image'
 import Link from 'next/link'
 
 import { trackEvent } from '../lib/ga'
@@ -61,8 +61,8 @@ const renderNavLink = (item: MenuItem) => {
     if (item.external) return <a href={item.url}>{item.name}</a>
     else
       return (
-        <Link href={item.url}>
-          <a onClick={() => menuClick(item)}>{item.name}</a>
+        <Link href={item.url} onClick={() => menuClick(item)}>
+          {item.name}
         </Link>
       )
   }
@@ -73,7 +73,8 @@ const renderNavLink = (item: MenuItem) => {
       onClick={(e) => {
         e.preventDefault()
         menuClick(item)
-      }}>
+      }}
+    >
       {item.name}
     </a>
   )
