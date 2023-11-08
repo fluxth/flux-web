@@ -4,7 +4,7 @@
   "coding": [
     {
       "title": "flux.ci personal website",
-      "repo_url": "https://github.com/fluxth/fluxth.github.io",
+      "repo_url": "https://github.com/fluxth/flux-web",
       "technologies": ["NextJS", "Typescript", "SASS"],
       "descriptions": [
         "This very site that you are looking at right now!",
