@@ -58,6 +58,8 @@ function MyApp({ Component, pageProps }: AppProps) {
               <p>NOTICE:</p>
               This website is now deprecated and may be removed at anytime!
               <br />
+              Any information displayed here may be outdated.
+              <br />
               Please visit my updated website at{' '}
               <b>
                 <a href="https://thitat.net">https://thitat.net</a>
